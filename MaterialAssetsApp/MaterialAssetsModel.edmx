@@ -1,0 +1,1381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище MaterialAssetsModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccountingCard">
+          <Key>
+            <PropertyRef Name="CardID" />
+          </Key>
+          <Property Name="CardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModelID" Type="int" Nullable="false" />
+          <Property Name="AssetName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="InventoryNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="ManufactureDate" Type="date" />
+          <Property Name="CommissionDate" Type="date" />
+          <Property Name="DecommissionDate" Type="date" />
+          <Property Name="DecommissionDocName" Type="nvarchar" MaxLength="200" />
+          <Property Name="DecommissionDocNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="DecommissionDocDate" Type="date" />
+          <Property Name="PreciousMetals" Type="nvarchar" MaxLength="500" />
+          <Property Name="InitialCost" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="ConditionID" Type="int" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="RoomID" Type="int" />
+          <Property Name="ResponsibleEmployeeID" Type="int" Nullable="false" />
+          <Property Name="CurrentHolderID" Type="int" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AssetComponent">
+          <Key>
+            <PropertyRef Name="ComponentID" />
+          </Key>
+          <Property Name="ComponentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CardID" Type="int" Nullable="false" />
+          <Property Name="ComponentName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ComponentNumber" Type="nvarchar" MaxLength="100" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="AssetCondition">
+          <Key>
+            <PropertyRef Name="ConditionID" />
+          </Key>
+          <Property Name="ConditionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConditionName" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AssetModel">
+          <Key>
+            <PropertyRef Name="ModelID" />
+          </Key>
+          <Property Name="ModelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AssetTypeID" Type="int" Nullable="false" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ModelName" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AssetMovement">
+          <Key>
+            <PropertyRef Name="MovementID" />
+          </Key>
+          <Property Name="MovementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CardID" Type="int" Nullable="false" />
+          <Property Name="SequenceNumber" Type="int" Nullable="false" />
+          <Property Name="MovementDate" Type="date" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="RoomID" Type="int" />
+          <Property Name="HolderEmployeeID" Type="int" Nullable="false" />
+          <Property Name="TransferredByID" Type="int" />
+          <Property Name="ConditionID" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="AssetType">
+          <Key>
+            <PropertyRef Name="AssetTypeID" />
+          </Key>
+          <Property Name="AssetTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ParentID" Type="int" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="100" />
+          <Property Name="BirthDate" Type="date" Nullable="false" />
+          <Property Name="SNILS" Type="char" MaxLength="14" Nullable="false" />
+          <Property Name="INN" Type="char" MaxLength="12" />
+          <Property Name="PassportID" Type="int" Nullable="false" />
+          <Property Name="PhoneMobile" Type="nvarchar" MaxLength="20" />
+          <Property Name="PhoneWork" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="HireDate" Type="date" Nullable="false" />
+          <Property Name="DismissDate" Type="date" />
+        </EntityType>
+        <EntityType Name="EmployeePassport">
+          <Key>
+            <PropertyRef Name="PassportID" />
+          </Key>
+          <Property Name="PassportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Series" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="PassportNumber" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="IssuedBy" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="IssuedDate" Type="date" Nullable="false" />
+          <Property Name="DivisionCode" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="BirthPlace" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="EmployeePosition">
+          <Key>
+            <PropertyRef Name="EmpPositionID" />
+          </Key>
+          <Property Name="EmpPositionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="PositionID" Type="int" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="RoomID" Type="int" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="PositionID" />
+          </Key>
+          <Property Name="PositionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PositionName" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="RoomID" />
+          </Key>
+          <Property Name="RoomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="RoomNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "MaterialAssets.dbo.vw_AssetCurrentLocation" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="vw_AssetCurrentLocation">
+          <Key>
+            <PropertyRef Name="CardID" />
+            <PropertyRef Name="InventoryNumber" />
+            <PropertyRef Name="AssetName" />
+            <PropertyRef Name="ModelID" />
+            <PropertyRef Name="Brand" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="AssetTypeID" />
+            <PropertyRef Name="AssetType" />
+            <PropertyRef Name="ConditionID" />
+            <PropertyRef Name="CurrentCondition" />
+            <PropertyRef Name="DepartmentID" />
+            <PropertyRef Name="CurrentDepartment" />
+            <PropertyRef Name="ResponsibleEmployeeID" />
+            <PropertyRef Name="ResponsiblePerson" />
+          </Key>
+          <Property Name="CardID" Type="int" Nullable="false" />
+          <Property Name="InventoryNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AssetName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ModelID" Type="int" Nullable="false" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ModelName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="AssetTypeID" Type="int" Nullable="false" />
+          <Property Name="AssetType" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ConditionID" Type="int" Nullable="false" />
+          <Property Name="CurrentCondition" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="CurrentDepartment" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="RoomID" Type="int" />
+          <Property Name="CurrentRoom" Type="nvarchar" MaxLength="20" />
+          <Property Name="ResponsibleEmployeeID" Type="int" Nullable="false" />
+          <Property Name="ResponsiblePerson" Type="nvarchar" MaxLength="302" Nullable="false" />
+          <Property Name="CurrentHolderID" Type="int" />
+          <Property Name="CurrentHolder" Type="nvarchar" MaxLength="302" />
+          <Property Name="CommissionDate" Type="date" />
+          <Property Name="DecommissionDate" Type="date" />
+          <Property Name="InitialCost" Type="decimal" Precision="15" Scale="2" />
+        </EntityType>
+        <Association Name="FK_AssetModel_Type">
+          <End Role="AssetType" Type="Self.AssetType" Multiplicity="1" />
+          <End Role="AssetModel" Type="Self.AssetModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetType">
+              <PropertyRef Name="AssetTypeID" />
+            </Principal>
+            <Dependent Role="AssetModel">
+              <PropertyRef Name="AssetTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Condition">
+          <End Role="AssetCondition" Type="Self.AssetCondition" Multiplicity="1" />
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetCondition">
+              <PropertyRef Name="ConditionID" />
+            </Principal>
+            <Dependent Role="AccountingCard">
+              <PropertyRef Name="ConditionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="AccountingCard">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Holder">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="AccountingCard">
+              <PropertyRef Name="CurrentHolderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Model">
+          <End Role="AssetModel" Type="Self.AssetModel" Multiplicity="1" />
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetModel">
+              <PropertyRef Name="ModelID" />
+            </Principal>
+            <Dependent Role="AccountingCard">
+              <PropertyRef Name="ModelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Responsible">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="AccountingCard">
+              <PropertyRef Name="ResponsibleEmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Room">
+          <End Role="Room" Type="Self.Room" Multiplicity="0..1" />
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="RoomID" />
+            </Principal>
+            <Dependent Role="AccountingCard">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Component_Card">
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="1" />
+          <End Role="AssetComponent" Type="Self.AssetComponent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountingCard">
+              <PropertyRef Name="CardID" />
+            </Principal>
+            <Dependent Role="AssetComponent">
+              <PropertyRef Name="CardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Department_Parent">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Department1" Type="Self.Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Department1">
+              <PropertyRef Name="ParentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Passport">
+          <End Role="EmployeePassport" Type="Self.EmployeePassport" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeePassport">
+              <PropertyRef Name="PassportID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="PassportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpPosition_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="EmployeePosition" Type="Self.EmployeePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="EmployeePosition">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpPosition_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="EmployeePosition" Type="Self.EmployeePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="EmployeePosition">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpPosition_Position">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="EmployeePosition" Type="Self.EmployeePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="PositionID" />
+            </Principal>
+            <Dependent Role="EmployeePosition">
+              <PropertyRef Name="PositionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpPosition_Room">
+          <End Role="Room" Type="Self.Room" Multiplicity="0..1" />
+          <End Role="EmployeePosition" Type="Self.EmployeePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="RoomID" />
+            </Principal>
+            <Dependent Role="EmployeePosition">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movement_Card">
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="1" />
+          <End Role="AssetMovement" Type="Self.AssetMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountingCard">
+              <PropertyRef Name="CardID" />
+            </Principal>
+            <Dependent Role="AssetMovement">
+              <PropertyRef Name="CardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movement_Condition">
+          <End Role="AssetCondition" Type="Self.AssetCondition" Multiplicity="1" />
+          <End Role="AssetMovement" Type="Self.AssetMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetCondition">
+              <PropertyRef Name="ConditionID" />
+            </Principal>
+            <Dependent Role="AssetMovement">
+              <PropertyRef Name="ConditionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movement_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="AssetMovement" Type="Self.AssetMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="AssetMovement">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movement_Holder">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="AssetMovement" Type="Self.AssetMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="AssetMovement">
+              <PropertyRef Name="HolderEmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movement_Room">
+          <End Role="Room" Type="Self.Room" Multiplicity="0..1" />
+          <End Role="AssetMovement" Type="Self.AssetMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="RoomID" />
+            </Principal>
+            <Dependent Role="AssetMovement">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movement_TransferredBy">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="AssetMovement" Type="Self.AssetMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="AssetMovement">
+              <PropertyRef Name="TransferredByID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Room_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Room" Type="Self.Room" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Room">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище MaterialAssetsModelContainer">
+          <EntitySet Name="AccountingCard" EntityType="Self.AccountingCard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssetComponent" EntityType="Self.AssetComponent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssetCondition" EntityType="Self.AssetCondition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssetModel" EntityType="Self.AssetModel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssetMovement" EntityType="Self.AssetMovement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AssetType" EntityType="Self.AssetType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeePassport" EntityType="Self.EmployeePassport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeePosition" EntityType="Self.EmployeePosition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vw_AssetCurrentLocation" EntityType="Self.vw_AssetCurrentLocation" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_AssetCurrentLocation].[CardID] AS [CardID], 
+[vw_AssetCurrentLocation].[InventoryNumber] AS [InventoryNumber], 
+[vw_AssetCurrentLocation].[AssetName] AS [AssetName], 
+[vw_AssetCurrentLocation].[ModelID] AS [ModelID], 
+[vw_AssetCurrentLocation].[Brand] AS [Brand], 
+[vw_AssetCurrentLocation].[ModelName] AS [ModelName], 
+[vw_AssetCurrentLocation].[AssetTypeID] AS [AssetTypeID], 
+[vw_AssetCurrentLocation].[AssetType] AS [AssetType], 
+[vw_AssetCurrentLocation].[ConditionID] AS [ConditionID], 
+[vw_AssetCurrentLocation].[CurrentCondition] AS [CurrentCondition], 
+[vw_AssetCurrentLocation].[DepartmentID] AS [DepartmentID], 
+[vw_AssetCurrentLocation].[CurrentDepartment] AS [CurrentDepartment], 
+[vw_AssetCurrentLocation].[RoomID] AS [RoomID], 
+[vw_AssetCurrentLocation].[CurrentRoom] AS [CurrentRoom], 
+[vw_AssetCurrentLocation].[ResponsibleEmployeeID] AS [ResponsibleEmployeeID], 
+[vw_AssetCurrentLocation].[ResponsiblePerson] AS [ResponsiblePerson], 
+[vw_AssetCurrentLocation].[CurrentHolderID] AS [CurrentHolderID], 
+[vw_AssetCurrentLocation].[CurrentHolder] AS [CurrentHolder], 
+[vw_AssetCurrentLocation].[CommissionDate] AS [CommissionDate], 
+[vw_AssetCurrentLocation].[DecommissionDate] AS [DecommissionDate], 
+[vw_AssetCurrentLocation].[InitialCost] AS [InitialCost]
+FROM [dbo].[vw_AssetCurrentLocation] AS [vw_AssetCurrentLocation]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_AssetModel_Type" Association="Self.FK_AssetModel_Type">
+            <End Role="AssetType" EntitySet="AssetType" />
+            <End Role="AssetModel" EntitySet="AssetModel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Condition" Association="Self.FK_Card_Condition">
+            <End Role="AssetCondition" EntitySet="AssetCondition" />
+            <End Role="AccountingCard" EntitySet="AccountingCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Department" Association="Self.FK_Card_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="AccountingCard" EntitySet="AccountingCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Holder" Association="Self.FK_Card_Holder">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="AccountingCard" EntitySet="AccountingCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Model" Association="Self.FK_Card_Model">
+            <End Role="AssetModel" EntitySet="AssetModel" />
+            <End Role="AccountingCard" EntitySet="AccountingCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Responsible" Association="Self.FK_Card_Responsible">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="AccountingCard" EntitySet="AccountingCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Room" Association="Self.FK_Card_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="AccountingCard" EntitySet="AccountingCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Component_Card" Association="Self.FK_Component_Card">
+            <End Role="AccountingCard" EntitySet="AccountingCard" />
+            <End Role="AssetComponent" EntitySet="AssetComponent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Department_Parent" Association="Self.FK_Department_Parent">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Department1" EntitySet="Department" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Passport" Association="Self.FK_Employee_Passport">
+            <End Role="EmployeePassport" EntitySet="EmployeePassport" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpPosition_Department" Association="Self.FK_EmpPosition_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="EmployeePosition" EntitySet="EmployeePosition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpPosition_Employee" Association="Self.FK_EmpPosition_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="EmployeePosition" EntitySet="EmployeePosition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpPosition_Position" Association="Self.FK_EmpPosition_Position">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="EmployeePosition" EntitySet="EmployeePosition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpPosition_Room" Association="Self.FK_EmpPosition_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="EmployeePosition" EntitySet="EmployeePosition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movement_Card" Association="Self.FK_Movement_Card">
+            <End Role="AccountingCard" EntitySet="AccountingCard" />
+            <End Role="AssetMovement" EntitySet="AssetMovement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movement_Condition" Association="Self.FK_Movement_Condition">
+            <End Role="AssetCondition" EntitySet="AssetCondition" />
+            <End Role="AssetMovement" EntitySet="AssetMovement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movement_Department" Association="Self.FK_Movement_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="AssetMovement" EntitySet="AssetMovement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movement_Holder" Association="Self.FK_Movement_Holder">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="AssetMovement" EntitySet="AssetMovement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movement_Room" Association="Self.FK_Movement_Room">
+            <End Role="Room" EntitySet="Room" />
+            <End Role="AssetMovement" EntitySet="AssetMovement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movement_TransferredBy" Association="Self.FK_Movement_TransferredBy">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="AssetMovement" EntitySet="AssetMovement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Room_Department" Association="Self.FK_Room_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Room" EntitySet="Room" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MaterialAssetsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AccountingCard">
+          <Key>
+            <PropertyRef Name="CardID" />
+          </Key>
+          <Property Name="CardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModelID" Type="Int32" Nullable="false" />
+          <Property Name="AssetName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InventoryNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SerialNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ManufactureDate" Type="DateTime" Precision="0" />
+          <Property Name="CommissionDate" Type="DateTime" Precision="0" />
+          <Property Name="DecommissionDate" Type="DateTime" Precision="0" />
+          <Property Name="DecommissionDocName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DecommissionDocNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DecommissionDocDate" Type="DateTime" Precision="0" />
+          <Property Name="PreciousMetals" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="InitialCost" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="ConditionID" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="RoomID" Type="Int32" />
+          <Property Name="ResponsibleEmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="CurrentHolderID" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AssetCondition" Relationship="Self.FK_Card_Condition" FromRole="AccountingCard" ToRole="AssetCondition" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Card_Department" FromRole="AccountingCard" ToRole="Department" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Card_Holder" FromRole="AccountingCard" ToRole="Employee" />
+          <NavigationProperty Name="AssetModel" Relationship="Self.FK_Card_Model" FromRole="AccountingCard" ToRole="AssetModel" />
+          <NavigationProperty Name="Employee1" Relationship="Self.FK_Card_Responsible" FromRole="AccountingCard" ToRole="Employee" />
+          <NavigationProperty Name="Room" Relationship="Self.FK_Card_Room" FromRole="AccountingCard" ToRole="Room" />
+          <NavigationProperty Name="AssetComponents" Relationship="Self.FK_Component_Card" FromRole="AccountingCard" ToRole="AssetComponent" />
+          <NavigationProperty Name="AssetMovements" Relationship="Self.FK_Movement_Card" FromRole="AccountingCard" ToRole="AssetMovement" />
+        </EntityType>
+        <EntityType Name="AssetComponent">
+          <Key>
+            <PropertyRef Name="ComponentID" />
+          </Key>
+          <Property Name="ComponentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CardID" Type="Int32" Nullable="false" />
+          <Property Name="ComponentName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ComponentNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AccountingCard" Relationship="Self.FK_Component_Card" FromRole="AssetComponent" ToRole="AccountingCard" />
+        </EntityType>
+        <EntityType Name="AssetCondition">
+          <Key>
+            <PropertyRef Name="ConditionID" />
+          </Key>
+          <Property Name="ConditionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ConditionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AccountingCards" Relationship="Self.FK_Card_Condition" FromRole="AssetCondition" ToRole="AccountingCard" />
+          <NavigationProperty Name="AssetMovements" Relationship="Self.FK_Movement_Condition" FromRole="AssetCondition" ToRole="AssetMovement" />
+        </EntityType>
+        <EntityType Name="AssetModel">
+          <Key>
+            <PropertyRef Name="ModelID" />
+          </Key>
+          <Property Name="ModelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AssetTypeID" Type="Int32" Nullable="false" />
+          <Property Name="Brand" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ModelName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AccountingCards" Relationship="Self.FK_Card_Model" FromRole="AssetModel" ToRole="AccountingCard" />
+          <NavigationProperty Name="AssetType" Relationship="Self.FK_AssetModel_Type" FromRole="AssetModel" ToRole="AssetType" />
+        </EntityType>
+        <EntityType Name="AssetMovement">
+          <Key>
+            <PropertyRef Name="MovementID" />
+          </Key>
+          <Property Name="MovementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CardID" Type="Int32" Nullable="false" />
+          <Property Name="SequenceNumber" Type="Int32" Nullable="false" />
+          <Property Name="MovementDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="RoomID" Type="Int32" />
+          <Property Name="HolderEmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="TransferredByID" Type="Int32" />
+          <Property Name="ConditionID" Type="Int32" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AccountingCard" Relationship="Self.FK_Movement_Card" FromRole="AssetMovement" ToRole="AccountingCard" />
+          <NavigationProperty Name="AssetCondition" Relationship="Self.FK_Movement_Condition" FromRole="AssetMovement" ToRole="AssetCondition" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Movement_Department" FromRole="AssetMovement" ToRole="Department" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Movement_Holder" FromRole="AssetMovement" ToRole="Employee" />
+          <NavigationProperty Name="Room" Relationship="Self.FK_Movement_Room" FromRole="AssetMovement" ToRole="Room" />
+          <NavigationProperty Name="Employee1" Relationship="Self.FK_Movement_TransferredBy" FromRole="AssetMovement" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="AssetType">
+          <Key>
+            <PropertyRef Name="AssetTypeID" />
+          </Key>
+          <Property Name="AssetTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AssetModels" Relationship="Self.FK_AssetModel_Type" FromRole="AssetType" ToRole="AssetModel" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ParentID" Type="Int32" />
+          <NavigationProperty Name="AccountingCards" Relationship="Self.FK_Card_Department" FromRole="Department" ToRole="AccountingCard" />
+          <NavigationProperty Name="AssetMovements" Relationship="Self.FK_Movement_Department" FromRole="Department" ToRole="AssetMovement" />
+          <NavigationProperty Name="Department1" Relationship="Self.FK_Department_Parent" FromRole="Department" ToRole="Department1" />
+          <NavigationProperty Name="Department2" Relationship="Self.FK_Department_Parent" FromRole="Department1" ToRole="Department" />
+          <NavigationProperty Name="EmployeePositions" Relationship="Self.FK_EmpPosition_Department" FromRole="Department" ToRole="EmployeePosition" />
+          <NavigationProperty Name="Rooms" Relationship="Self.FK_Room_Department" FromRole="Department" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SNILS" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="INN" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="PassportID" Type="Int32" Nullable="false" />
+          <Property Name="PhoneMobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneWork" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="HireDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DismissDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="AccountingCards" Relationship="Self.FK_Card_Holder" FromRole="Employee" ToRole="AccountingCard" />
+          <NavigationProperty Name="AccountingCards1" Relationship="Self.FK_Card_Responsible" FromRole="Employee" ToRole="AccountingCard" />
+          <NavigationProperty Name="AssetMovements" Relationship="Self.FK_Movement_Holder" FromRole="Employee" ToRole="AssetMovement" />
+          <NavigationProperty Name="AssetMovements1" Relationship="Self.FK_Movement_TransferredBy" FromRole="Employee" ToRole="AssetMovement" />
+          <NavigationProperty Name="EmployeePassport" Relationship="Self.FK_Employee_Passport" FromRole="Employee" ToRole="EmployeePassport" />
+          <NavigationProperty Name="EmployeePositions" Relationship="Self.FK_EmpPosition_Employee" FromRole="Employee" ToRole="EmployeePosition" />
+        </EntityType>
+        <EntityType Name="EmployeePassport">
+          <Key>
+            <PropertyRef Name="PassportID" />
+          </Key>
+          <Property Name="PassportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Series" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PassportNumber" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IssuedBy" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IssuedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DivisionCode" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="BirthPlace" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employee_Passport" FromRole="EmployeePassport" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="EmployeePosition">
+          <Key>
+            <PropertyRef Name="EmpPositionID" />
+          </Key>
+          <Property Name="EmpPositionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="PositionID" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="RoomID" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_EmpPosition_Department" FromRole="EmployeePosition" ToRole="Department" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_EmpPosition_Employee" FromRole="EmployeePosition" ToRole="Employee" />
+          <NavigationProperty Name="Position" Relationship="Self.FK_EmpPosition_Position" FromRole="EmployeePosition" ToRole="Position" />
+          <NavigationProperty Name="Room" Relationship="Self.FK_EmpPosition_Room" FromRole="EmployeePosition" ToRole="Room" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="PositionID" />
+          </Key>
+          <Property Name="PositionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PositionName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="EmployeePositions" Relationship="Self.FK_EmpPosition_Position" FromRole="Position" ToRole="EmployeePosition" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="RoomID" />
+          </Key>
+          <Property Name="RoomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="RoomNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AccountingCards" Relationship="Self.FK_Card_Room" FromRole="Room" ToRole="AccountingCard" />
+          <NavigationProperty Name="AssetMovements" Relationship="Self.FK_Movement_Room" FromRole="Room" ToRole="AssetMovement" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Room_Department" FromRole="Room" ToRole="Department" />
+          <NavigationProperty Name="EmployeePositions" Relationship="Self.FK_EmpPosition_Room" FromRole="Room" ToRole="EmployeePosition" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Card_Condition">
+          <End Role="AssetCondition" Type="Self.AssetCondition" Multiplicity="1" />
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetCondition">
+              <PropertyRef Name="ConditionID" />
+            </Principal>
+            <Dependent Role="AccountingCard">
+              <PropertyRef Name="ConditionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="AccountingCard">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Holder">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="AccountingCard">
+              <PropertyRef Name="CurrentHolderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Model">
+          <End Role="AssetModel" Type="Self.AssetModel" Multiplicity="1" />
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetModel">
+              <PropertyRef Name="ModelID" />
+            </Principal>
+            <Dependent Role="AccountingCard">
+              <PropertyRef Name="ModelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Responsible">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="AccountingCard">
+              <PropertyRef Name="ResponsibleEmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Card_Room">
+          <End Role="Room" Type="Self.Room" Multiplicity="0..1" />
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="RoomID" />
+            </Principal>
+            <Dependent Role="AccountingCard">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Component_Card">
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="1" />
+          <End Role="AssetComponent" Type="Self.AssetComponent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountingCard">
+              <PropertyRef Name="CardID" />
+            </Principal>
+            <Dependent Role="AssetComponent">
+              <PropertyRef Name="CardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movement_Card">
+          <End Role="AccountingCard" Type="Self.AccountingCard" Multiplicity="1" />
+          <End Role="AssetMovement" Type="Self.AssetMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountingCard">
+              <PropertyRef Name="CardID" />
+            </Principal>
+            <Dependent Role="AssetMovement">
+              <PropertyRef Name="CardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movement_Condition">
+          <End Role="AssetCondition" Type="Self.AssetCondition" Multiplicity="1" />
+          <End Role="AssetMovement" Type="Self.AssetMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetCondition">
+              <PropertyRef Name="ConditionID" />
+            </Principal>
+            <Dependent Role="AssetMovement">
+              <PropertyRef Name="ConditionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AssetModel_Type">
+          <End Role="AssetType" Type="Self.AssetType" Multiplicity="1" />
+          <End Role="AssetModel" Type="Self.AssetModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssetType">
+              <PropertyRef Name="AssetTypeID" />
+            </Principal>
+            <Dependent Role="AssetModel">
+              <PropertyRef Name="AssetTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movement_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="AssetMovement" Type="Self.AssetMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="AssetMovement">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movement_Holder">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="AssetMovement" Type="Self.AssetMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="AssetMovement">
+              <PropertyRef Name="HolderEmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movement_Room">
+          <End Role="Room" Type="Self.Room" Multiplicity="0..1" />
+          <End Role="AssetMovement" Type="Self.AssetMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="RoomID" />
+            </Principal>
+            <Dependent Role="AssetMovement">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movement_TransferredBy">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="AssetMovement" Type="Self.AssetMovement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="AssetMovement">
+              <PropertyRef Name="TransferredByID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Department_Parent">
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Department1" Type="Self.Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Department1">
+              <PropertyRef Name="ParentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpPosition_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="EmployeePosition" Type="Self.EmployeePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="EmployeePosition">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Room_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Room" Type="Self.Room" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Room">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Passport">
+          <End Role="EmployeePassport" Type="Self.EmployeePassport" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeePassport">
+              <PropertyRef Name="PassportID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="PassportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpPosition_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="EmployeePosition" Type="Self.EmployeePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="EmployeePosition">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpPosition_Position">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="EmployeePosition" Type="Self.EmployeePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="PositionID" />
+            </Principal>
+            <Dependent Role="EmployeePosition">
+              <PropertyRef Name="PositionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpPosition_Room">
+          <End Role="Room" Type="Self.Room" Multiplicity="0..1" />
+          <End Role="EmployeePosition" Type="Self.EmployeePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room">
+              <PropertyRef Name="RoomID" />
+            </Principal>
+            <Dependent Role="EmployeePosition">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MaterialAssetsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AccountingCards" EntityType="Self.AccountingCard" />
+          <EntitySet Name="AssetComponents" EntityType="Self.AssetComponent" />
+          <EntitySet Name="AssetConditions" EntityType="Self.AssetCondition" />
+          <EntitySet Name="AssetModels" EntityType="Self.AssetModel" />
+          <EntitySet Name="AssetMovements" EntityType="Self.AssetMovement" />
+          <EntitySet Name="AssetTypes" EntityType="Self.AssetType" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="EmployeePassports" EntityType="Self.EmployeePassport" />
+          <EntitySet Name="EmployeePositions" EntityType="Self.EmployeePosition" />
+          <EntitySet Name="Positions" EntityType="Self.Position" />
+          <EntitySet Name="Rooms" EntityType="Self.Room" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Card_Condition" Association="Self.FK_Card_Condition">
+            <End Role="AssetCondition" EntitySet="AssetConditions" />
+            <End Role="AccountingCard" EntitySet="AccountingCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Department" Association="Self.FK_Card_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="AccountingCard" EntitySet="AccountingCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Holder" Association="Self.FK_Card_Holder">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="AccountingCard" EntitySet="AccountingCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Model" Association="Self.FK_Card_Model">
+            <End Role="AssetModel" EntitySet="AssetModels" />
+            <End Role="AccountingCard" EntitySet="AccountingCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Responsible" Association="Self.FK_Card_Responsible">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="AccountingCard" EntitySet="AccountingCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_Room" Association="Self.FK_Card_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="AccountingCard" EntitySet="AccountingCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Component_Card" Association="Self.FK_Component_Card">
+            <End Role="AccountingCard" EntitySet="AccountingCards" />
+            <End Role="AssetComponent" EntitySet="AssetComponents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movement_Card" Association="Self.FK_Movement_Card">
+            <End Role="AccountingCard" EntitySet="AccountingCards" />
+            <End Role="AssetMovement" EntitySet="AssetMovements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movement_Condition" Association="Self.FK_Movement_Condition">
+            <End Role="AssetCondition" EntitySet="AssetConditions" />
+            <End Role="AssetMovement" EntitySet="AssetMovements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AssetModel_Type" Association="Self.FK_AssetModel_Type">
+            <End Role="AssetType" EntitySet="AssetTypes" />
+            <End Role="AssetModel" EntitySet="AssetModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movement_Department" Association="Self.FK_Movement_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="AssetMovement" EntitySet="AssetMovements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movement_Holder" Association="Self.FK_Movement_Holder">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="AssetMovement" EntitySet="AssetMovements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movement_Room" Association="Self.FK_Movement_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="AssetMovement" EntitySet="AssetMovements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Movement_TransferredBy" Association="Self.FK_Movement_TransferredBy">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="AssetMovement" EntitySet="AssetMovements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Department_Parent" Association="Self.FK_Department_Parent">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Department1" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpPosition_Department" Association="Self.FK_EmpPosition_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="EmployeePosition" EntitySet="EmployeePositions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Room_Department" Association="Self.FK_Room_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Room" EntitySet="Rooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Passport" Association="Self.FK_Employee_Passport">
+            <End Role="EmployeePassport" EntitySet="EmployeePassports" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpPosition_Employee" Association="Self.FK_EmpPosition_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="EmployeePosition" EntitySet="EmployeePositions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpPosition_Position" Association="Self.FK_EmpPosition_Position">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="EmployeePosition" EntitySet="EmployeePositions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpPosition_Room" Association="Self.FK_EmpPosition_Room">
+            <End Role="Room" EntitySet="Rooms" />
+            <End Role="EmployeePosition" EntitySet="EmployeePositions" />
+          </AssociationSet>
+          <EntitySet Name="vw_AssetCurrentLocation" EntityType="MaterialAssetsModel.vw_AssetCurrentLocation" />
+        </EntityContainer>
+        <EntityType Name="vw_AssetCurrentLocation">
+          <Key>
+            <PropertyRef Name="CardID" />
+            <PropertyRef Name="InventoryNumber" />
+            <PropertyRef Name="AssetName" />
+            <PropertyRef Name="Brand" />
+            <PropertyRef Name="ModelName" />
+            <PropertyRef Name="AssetType" />
+            <PropertyRef Name="CurrentDepartment" />
+            <PropertyRef Name="CurrentCondition" />
+            <PropertyRef Name="ResponsiblePerson" />
+            <PropertyRef Name="ModelID" />
+            <PropertyRef Name="AssetTypeID" />
+            <PropertyRef Name="ConditionID" />
+            <PropertyRef Name="DepartmentID" />
+            <PropertyRef Name="ResponsibleEmployeeID" />
+          </Key>
+          <Property Name="CardID" Type="Int32" Nullable="false" />
+          <Property Name="InventoryNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AssetName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModelName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="AssetType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentDepartment" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentRoom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentCondition" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ResponsiblePerson" Type="String" Nullable="false" MaxLength="302" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentHolder" Type="String" MaxLength="302" FixedLength="false" Unicode="true" />
+          <Property Name="CommissionDate" Type="DateTime" Precision="0" />
+          <Property Name="DecommissionDate" Type="DateTime" Precision="0" />
+          <Property Name="InitialCost" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="ModelID" Type="Int32" Nullable="false" />
+          <Property Name="AssetTypeID" Type="Int32" Nullable="false" />
+          <Property Name="ConditionID" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="RoomID" Type="Int32" />
+          <Property Name="ResponsibleEmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="CurrentHolderID" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище MaterialAssetsModelContainer" CdmEntityContainer="MaterialAssetsEntities">
+          <EntitySetMapping Name="AccountingCards">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.AccountingCard">
+              <MappingFragment StoreEntitySet="AccountingCard">
+                <ScalarProperty Name="CardID" ColumnName="CardID" />
+                <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+                <ScalarProperty Name="AssetName" ColumnName="AssetName" />
+                <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="ManufactureDate" ColumnName="ManufactureDate" />
+                <ScalarProperty Name="CommissionDate" ColumnName="CommissionDate" />
+                <ScalarProperty Name="DecommissionDate" ColumnName="DecommissionDate" />
+                <ScalarProperty Name="DecommissionDocName" ColumnName="DecommissionDocName" />
+                <ScalarProperty Name="DecommissionDocNumber" ColumnName="DecommissionDocNumber" />
+                <ScalarProperty Name="DecommissionDocDate" ColumnName="DecommissionDocDate" />
+                <ScalarProperty Name="PreciousMetals" ColumnName="PreciousMetals" />
+                <ScalarProperty Name="InitialCost" ColumnName="InitialCost" />
+                <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="ResponsibleEmployeeID" ColumnName="ResponsibleEmployeeID" />
+                <ScalarProperty Name="CurrentHolderID" ColumnName="CurrentHolderID" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssetComponents">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.AssetComponent">
+              <MappingFragment StoreEntitySet="AssetComponent">
+                <ScalarProperty Name="ComponentID" ColumnName="ComponentID" />
+                <ScalarProperty Name="CardID" ColumnName="CardID" />
+                <ScalarProperty Name="ComponentName" ColumnName="ComponentName" />
+                <ScalarProperty Name="ComponentNumber" ColumnName="ComponentNumber" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssetConditions">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.AssetCondition">
+              <MappingFragment StoreEntitySet="AssetCondition">
+                <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+                <ScalarProperty Name="ConditionName" ColumnName="ConditionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssetModels">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.AssetModel">
+              <MappingFragment StoreEntitySet="AssetModel">
+                <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+                <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssetMovements">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.AssetMovement">
+              <MappingFragment StoreEntitySet="AssetMovement">
+                <ScalarProperty Name="MovementID" ColumnName="MovementID" />
+                <ScalarProperty Name="CardID" ColumnName="CardID" />
+                <ScalarProperty Name="SequenceNumber" ColumnName="SequenceNumber" />
+                <ScalarProperty Name="MovementDate" ColumnName="MovementDate" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="HolderEmployeeID" ColumnName="HolderEmployeeID" />
+                <ScalarProperty Name="TransferredByID" ColumnName="TransferredByID" />
+                <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssetTypes">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.AssetType">
+              <MappingFragment StoreEntitySet="AssetType">
+                <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="SNILS" ColumnName="SNILS" />
+                <ScalarProperty Name="INN" ColumnName="INN" />
+                <ScalarProperty Name="PassportID" ColumnName="PassportID" />
+                <ScalarProperty Name="PhoneMobile" ColumnName="PhoneMobile" />
+                <ScalarProperty Name="PhoneWork" ColumnName="PhoneWork" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="DismissDate" ColumnName="DismissDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeePassports">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.EmployeePassport">
+              <MappingFragment StoreEntitySet="EmployeePassport">
+                <ScalarProperty Name="PassportID" ColumnName="PassportID" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+                <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+                <ScalarProperty Name="IssuedDate" ColumnName="IssuedDate" />
+                <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+                <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeePositions">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.EmployeePosition">
+              <MappingFragment StoreEntitySet="EmployeePosition">
+                <ScalarProperty Name="EmpPositionID" ColumnName="EmpPositionID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Positions">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+                <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rooms">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.Room">
+              <MappingFragment StoreEntitySet="Room">
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_AssetCurrentLocation">
+            <EntityTypeMapping TypeName="MaterialAssetsModel.vw_AssetCurrentLocation">
+              <MappingFragment StoreEntitySet="vw_AssetCurrentLocation">
+                <ScalarProperty Name="CurrentHolderID" ColumnName="CurrentHolderID" />
+                <ScalarProperty Name="ResponsibleEmployeeID" ColumnName="ResponsibleEmployeeID" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+                <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
+                <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+                <ScalarProperty Name="InitialCost" ColumnName="InitialCost" />
+                <ScalarProperty Name="DecommissionDate" ColumnName="DecommissionDate" />
+                <ScalarProperty Name="CommissionDate" ColumnName="CommissionDate" />
+                <ScalarProperty Name="CurrentHolder" ColumnName="CurrentHolder" />
+                <ScalarProperty Name="ResponsiblePerson" ColumnName="ResponsiblePerson" />
+                <ScalarProperty Name="CurrentCondition" ColumnName="CurrentCondition" />
+                <ScalarProperty Name="CurrentRoom" ColumnName="CurrentRoom" />
+                <ScalarProperty Name="CurrentDepartment" ColumnName="CurrentDepartment" />
+                <ScalarProperty Name="AssetType" ColumnName="AssetType" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="AssetName" ColumnName="AssetName" />
+                <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />
+                <ScalarProperty Name="CardID" ColumnName="CardID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,82 @@
+﻿<Window x:Class="MaterialAssetsApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Учет материальных ценностей"
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="SingleBorderWindow">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <!-- Панель кнопок -->
+            <ColumnDefinition Width="*"/>
+            <!-- Область страниц -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Левая панель с кнопками -->
+        <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="10">
+                <TextBlock Text="Действия"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Margin="0,0,0,10"/>
+
+                <!-- Создание -->
+                <Button Content="Создать учетную карточку"
+                        Margin="0,0,0,5"
+                        Height="35"
+                        Click="BtnCreateCard_Click"/>
+                <Button Content="Добавить сотрудника"
+                        Margin="0,0,0,5"
+                        Height="35"
+                        Click="BtnAddEmployee_Click"/>
+                <Button Content="Добавить подразделение"
+                        Margin="0,0,0,5"
+                        Height="35"
+                        Click="BtnAddDepartment_Click"/>
+                <Button Content="Добавить кабинет"
+                        Margin="0,0,0,5"
+                        Height="35"
+                        Click="BtnAddRoom_Click"/>
+                <Button Content="Добавить тип"
+                        Margin="0,0,0,5"
+                        Height="35"
+                        Click="BtnAddAssetType_Click"/>
+                <Button Content="Добавить модель"
+                        Margin="0,0,0,5"
+                        Height="35"
+                        Click="BtnAddModel_Click"/>
+                <Button Content="Добавить должность"
+                        Margin="0,0,0,5"
+                        Height="35"
+                        Click="BtnAddPosition_Click"/>
+
+                <Separator Margin="0,10,0,10"/>
+
+                <!-- Поиск -->
+                <Button Content="Поиск по сотруднику"
+                        Margin="0,0,0,5"
+                        Height="35"
+                        Click="BtnSearchEmployee_Click"/>
+                <Button Content="Поиск по кабинету"
+                        Margin="0,0,0,5"
+                        Height="35"
+                        Click="BtnSearchRoom_Click"/>
+                <Button Content="Поиск по учетной карточке"
+                        Margin="0,0,0,5"
+                        Height="35"
+                        Click="BtnSearchCard_Click"/>
+                <Button Content="Поиск по подразделению"
+                        Margin="0,0,0,5"
+                        Height="35"
+                        Click="BtnSearchDepartment_Click"/>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Область для страниц -->
+        <Frame x:Name="MainFrame"
+               Grid.Column="1"
+               NavigationUIVisibility="Hidden"
+               Margin="5"/>
+    </Grid>
+</Window>

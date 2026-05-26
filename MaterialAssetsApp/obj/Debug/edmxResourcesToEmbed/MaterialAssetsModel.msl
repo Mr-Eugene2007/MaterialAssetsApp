@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище MaterialAssetsModelContainer" CdmEntityContainer="MaterialAssetsEntities">
+    <EntitySetMapping Name="AccountingCards">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.AccountingCard">
+        <MappingFragment StoreEntitySet="AccountingCard">
+          <ScalarProperty Name="CardID" ColumnName="CardID" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="AssetName" ColumnName="AssetName" />
+          <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="ManufactureDate" ColumnName="ManufactureDate" />
+          <ScalarProperty Name="CommissionDate" ColumnName="CommissionDate" />
+          <ScalarProperty Name="DecommissionDate" ColumnName="DecommissionDate" />
+          <ScalarProperty Name="DecommissionDocName" ColumnName="DecommissionDocName" />
+          <ScalarProperty Name="DecommissionDocNumber" ColumnName="DecommissionDocNumber" />
+          <ScalarProperty Name="DecommissionDocDate" ColumnName="DecommissionDocDate" />
+          <ScalarProperty Name="PreciousMetals" ColumnName="PreciousMetals" />
+          <ScalarProperty Name="InitialCost" ColumnName="InitialCost" />
+          <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="ResponsibleEmployeeID" ColumnName="ResponsibleEmployeeID" />
+          <ScalarProperty Name="CurrentHolderID" ColumnName="CurrentHolderID" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetComponents">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.AssetComponent">
+        <MappingFragment StoreEntitySet="AssetComponent">
+          <ScalarProperty Name="ComponentID" ColumnName="ComponentID" />
+          <ScalarProperty Name="CardID" ColumnName="CardID" />
+          <ScalarProperty Name="ComponentName" ColumnName="ComponentName" />
+          <ScalarProperty Name="ComponentNumber" ColumnName="ComponentNumber" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetConditions">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.AssetCondition">
+        <MappingFragment StoreEntitySet="AssetCondition">
+          <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+          <ScalarProperty Name="ConditionName" ColumnName="ConditionName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetModels">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.AssetModel">
+        <MappingFragment StoreEntitySet="AssetModel">
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetMovements">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.AssetMovement">
+        <MappingFragment StoreEntitySet="AssetMovement">
+          <ScalarProperty Name="MovementID" ColumnName="MovementID" />
+          <ScalarProperty Name="CardID" ColumnName="CardID" />
+          <ScalarProperty Name="SequenceNumber" ColumnName="SequenceNumber" />
+          <ScalarProperty Name="MovementDate" ColumnName="MovementDate" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="HolderEmployeeID" ColumnName="HolderEmployeeID" />
+          <ScalarProperty Name="TransferredByID" ColumnName="TransferredByID" />
+          <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetTypes">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.AssetType">
+        <MappingFragment StoreEntitySet="AssetType">
+          <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="SNILS" ColumnName="SNILS" />
+          <ScalarProperty Name="INN" ColumnName="INN" />
+          <ScalarProperty Name="PassportID" ColumnName="PassportID" />
+          <ScalarProperty Name="PhoneMobile" ColumnName="PhoneMobile" />
+          <ScalarProperty Name="PhoneWork" ColumnName="PhoneWork" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+          <ScalarProperty Name="DismissDate" ColumnName="DismissDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeePassports">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.EmployeePassport">
+        <MappingFragment StoreEntitySet="EmployeePassport">
+          <ScalarProperty Name="PassportID" ColumnName="PassportID" />
+          <ScalarProperty Name="Series" ColumnName="Series" />
+          <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+          <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+          <ScalarProperty Name="IssuedDate" ColumnName="IssuedDate" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeePositions">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.EmployeePosition">
+        <MappingFragment StoreEntitySet="EmployeePosition">
+          <ScalarProperty Name="EmpPositionID" ColumnName="EmpPositionID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.Position">
+        <MappingFragment StoreEntitySet="Position">
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="PositionName" ColumnName="PositionName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rooms">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.Room">
+        <MappingFragment StoreEntitySet="Room">
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_AssetCurrentLocation">
+      <EntityTypeMapping TypeName="MaterialAssetsModel.vw_AssetCurrentLocation">
+        <MappingFragment StoreEntitySet="vw_AssetCurrentLocation">
+          <ScalarProperty Name="CurrentHolderID" ColumnName="CurrentHolderID" />
+          <ScalarProperty Name="ResponsibleEmployeeID" ColumnName="ResponsibleEmployeeID" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+          <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="InitialCost" ColumnName="InitialCost" />
+          <ScalarProperty Name="DecommissionDate" ColumnName="DecommissionDate" />
+          <ScalarProperty Name="CommissionDate" ColumnName="CommissionDate" />
+          <ScalarProperty Name="CurrentHolder" ColumnName="CurrentHolder" />
+          <ScalarProperty Name="ResponsiblePerson" ColumnName="ResponsiblePerson" />
+          <ScalarProperty Name="CurrentCondition" ColumnName="CurrentCondition" />
+          <ScalarProperty Name="CurrentRoom" ColumnName="CurrentRoom" />
+          <ScalarProperty Name="CurrentDepartment" ColumnName="CurrentDepartment" />
+          <ScalarProperty Name="AssetType" ColumnName="AssetType" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="AssetName" ColumnName="AssetName" />
+          <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />
+          <ScalarProperty Name="CardID" ColumnName="CardID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
