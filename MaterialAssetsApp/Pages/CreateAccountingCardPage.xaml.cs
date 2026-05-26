@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -6,7 +7,8 @@ namespace MaterialAssetsApp.Pages
 {
     public partial class CreateAccountingCardPage : Page
     {
-        private MaterialAssetsEntities _context;
+        private readonly MaterialAssetsEntities _context;
+        private readonly List<AssetComponent> _tempComponents = new List<AssetComponent>();
 
         public CreateAccountingCardPage()
         {
@@ -17,42 +19,38 @@ namespace MaterialAssetsApp.Pages
             LoadConditions();
             LoadDepartments();
             LoadEmployees();
+            LoadComponents();
         }
 
         private void LoadModels()
         {
-            cbModel.ItemsSource = _context.AssetModels
-                                         .OrderBy(m => m.ModelName)
-                                         .ToList();
+            cbModel.ItemsSource = _context.AssetModels.OrderBy(m => m.ModelName).ToList();
         }
 
         private void LoadConditions()
         {
-            cbCondition.ItemsSource = _context.AssetConditions
-                                              .OrderBy(c => c.ConditionName)
-                                              .ToList();
+            cbCondition.ItemsSource = _context.AssetConditions.OrderBy(c => c.ConditionName).ToList();
         }
 
         private void LoadDepartments()
         {
-            cbDepartment.ItemsSource = _context.Departments
-                                               .OrderBy(d => d.DepartmentName)
-                                               .ToList();
+            cbDepartment.ItemsSource = _context.Departments.OrderBy(d => d.DepartmentName).ToList();
         }
 
         private void LoadEmployees()
         {
-            cbResponsible.ItemsSource =
-            cbHolder.ItemsSource =
-                _context.Employees
-                        .OrderBy(e => e.LastName)
-                        .Select(e => new
-                        {
-                            e.EmployeeID,
-                            FullName = e.LastName + " " + e.FirstName +
-                                       (string.IsNullOrEmpty(e.MiddleName) ? "" : " " + e.MiddleName)
-                        })
-                        .ToList();
+            var employees = _context.Employees
+                .OrderBy(e => e.LastName)
+                .Select(e => new
+                {
+                    e.EmployeeID,
+                    FullName = e.LastName + " " + e.FirstName +
+                               (string.IsNullOrEmpty(e.MiddleName) ? "" : " " + e.MiddleName)
+                })
+                .ToList();
+
+            cbResponsible.ItemsSource = employees;
+            cbHolder.ItemsSource = employees;
         }
 
         private void cbDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -66,10 +64,43 @@ namespace MaterialAssetsApp.Pages
             int depId = (int)cbDepartment.SelectedValue;
 
             cbRoom.ItemsSource = _context.Rooms
-                                         .Where(r => r.DepartmentID == depId)
-                                         .OrderBy(r => r.RoomNumber)
-                                         .ToList();
+                .Where(r => r.DepartmentID == depId)
+                .OrderBy(r => r.RoomNumber)
+                .ToList();
         }
+
+        // ───────────────────────────────────────────────
+        // Комплектующие
+        // ───────────────────────────────────────────────
+
+        private void LoadComponents()
+        {
+            dgComponents.ItemsSource = null;
+            dgComponents.ItemsSource = _tempComponents;
+        }
+
+        private void BtnAddComponent_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow)
+                .MainFrame.Navigate(new AddComponentPage(_tempComponents, LoadComponents));
+        }
+
+        private void BtnDeleteComponent_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgComponents.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите компонент.");
+                return;
+            }
+
+            var comp = dgComponents.SelectedItem as AssetComponent;
+            _tempComponents.Remove(comp);
+            LoadComponents();
+        }
+
+        // ───────────────────────────────────────────────
+        // СОХРАНЕНИЕ КАРТОЧКИ
+        // ───────────────────────────────────────────────
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
@@ -103,17 +134,26 @@ namespace MaterialAssetsApp.Pages
                     DepartmentID = (int)cbDepartment.SelectedValue,
                     RoomID = cbRoom.SelectedValue as int?,
                     ResponsibleEmployeeID = (int)cbResponsible.SelectedValue,
-                    CurrentHolderID = cbHolder.SelectedValue as int?,
-                    Notes = null
+                    CurrentHolderID = cbHolder.SelectedValue as int?
                 };
 
                 _context.AccountingCards.Add(card);
+                _context.SaveChanges();
+
+                // Сохраняем комплектующие
+                foreach (var c in _tempComponents)
+                {
+                    c.CardID = card.CardID;
+                    _context.AssetComponents.Add(c);
+                }
+
                 _context.SaveChanges();
 
                 MessageBox.Show("Учетная карточка успешно создана.",
                                 "Успех",
                                 MessageBoxButton.OK,
                                 MessageBoxImage.Information);
+
             }
             catch (System.Exception ex)
             {
@@ -137,6 +177,9 @@ namespace MaterialAssetsApp.Pages
             cbRoom.ItemsSource = null;
             cbResponsible.SelectedIndex = -1;
             cbHolder.SelectedIndex = -1;
+
+            _tempComponents.Clear();
+            LoadComponents();
         }
     }
 }

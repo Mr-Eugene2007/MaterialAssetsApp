@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\velts\source\repos\MaterialAssetsApp\MaterialAssetsApp\App.xaml
-17-752793493
+19-927105988
 2-1524784259
-38-1443810584
+40-2005660745
 19-1906065032
-MainWindow.xaml;Pages\AddAssetTypePage.xaml;Pages\AddDepartmentPage.xaml;Pages\AddEmployeePage.xaml;Pages\AddModelPage.xaml;Pages\AddMovementPage.xaml;Pages\AddPositionPage.xaml;Pages\AddRoomPage.xaml;Pages\CardListPage.xaml;Pages\CreateAccountingCardPage.xaml;Pages\EditAccountingCardPage.xaml;Pages\EditMovementPage.xaml;Pages\MovementHistoryPage.xaml;Pages\SearchCardPage.xaml;Pages\SearchDepartmentPage.xaml;Pages\SearchEmployeePage.xaml;Pages\SearchRoomPage.xaml;
+MainWindow.xaml;Pages\AddAssetTypePage.xaml;Pages\AddComponentPage.xaml;Pages\AddDepartmentPage.xaml;Pages\AddEmployeePage.xaml;Pages\AddModelPage.xaml;Pages\AddMovementPage.xaml;Pages\AddPositionPage.xaml;Pages\AddRoomPage.xaml;Pages\CardListPage.xaml;Pages\CreateAccountingCardPage.xaml;Pages\EditAccountingCardPage.xaml;Pages\EditComponentPage.xaml;Pages\EditMovementPage.xaml;Pages\MovementHistoryPage.xaml;Pages\SearchCardPage.xaml;Pages\SearchDepartmentPage.xaml;Pages\SearchEmployeePage.xaml;Pages\SearchRoomPage.xaml;
 
 False
 

@@ -104,6 +104,9 @@
     <Compile Include="Pages\AddAssetTypePage.xaml.cs">
       <DependentUpon>AddAssetTypePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddComponentPage.xaml.cs">
+      <DependentUpon>AddComponentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddDepartmentPage.xaml.cs">
       <DependentUpon>AddDepartmentPage.xaml</DependentUpon>
     </Compile>
@@ -130,6 +133,9 @@
     </Compile>
     <Compile Include="Pages\EditAccountingCardPage.xaml.cs">
       <DependentUpon>EditAccountingCardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditComponentPage.xaml.cs">
+      <DependentUpon>EditComponentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EditMovementPage.xaml.cs">
       <DependentUpon>EditMovementPage.xaml</DependentUpon>
@@ -177,6 +183,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AddComponentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddDepartmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -210,6 +220,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\EditAccountingCardPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EditComponentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
