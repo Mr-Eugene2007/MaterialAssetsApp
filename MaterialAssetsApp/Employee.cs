@@ -30,7 +30,7 @@ namespace MaterialAssetsApp
         public System.DateTime BirthDate { get; set; }
         public string SNILS { get; set; }
         public string INN { get; set; }
-        public int PassportID { get; set; }
+        public Nullable<int> PassportID { get; set; }
         public string PhoneMobile { get; set; }
         public string PhoneWork { get; set; }
         public string Email { get; set; }

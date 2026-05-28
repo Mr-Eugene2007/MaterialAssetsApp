@@ -97,7 +97,7 @@
           <Property Name="BirthDate" Type="date" Nullable="false" />
           <Property Name="SNILS" Type="char" MaxLength="14" Nullable="false" />
           <Property Name="INN" Type="char" MaxLength="12" />
-          <Property Name="PassportID" Type="int" Nullable="false" />
+          <Property Name="PassportID" Type="int" />
           <Property Name="PhoneMobile" Type="nvarchar" MaxLength="20" />
           <Property Name="PhoneWork" Type="nvarchar" MaxLength="20" />
           <Property Name="Email" Type="nvarchar" MaxLength="150" />
@@ -305,7 +305,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Employee_Passport">
-          <End Role="EmployeePassport" Type="Self.EmployeePassport" Multiplicity="1" />
+          <End Role="EmployeePassport" Type="Self.EmployeePassport" Multiplicity="0..1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EmployeePassport">
@@ -694,7 +694,7 @@ FROM [dbo].[vw_AssetCurrentLocation] AS [vw_AssetCurrentLocation]</DefiningQuery
           <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="SNILS" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="INN" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
-          <Property Name="PassportID" Type="Int32" Nullable="false" />
+          <Property Name="PassportID" Type="Int32" Nullable="true" />
           <Property Name="PhoneMobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="PhoneWork" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
@@ -973,7 +973,7 @@ FROM [dbo].[vw_AssetCurrentLocation] AS [vw_AssetCurrentLocation]</DefiningQuery
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Employee_Passport">
-          <End Role="EmployeePassport" Type="Self.EmployeePassport" Multiplicity="1" />
+          <End Role="EmployeePassport" Type="Self.EmployeePassport" Multiplicity="0..1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="EmployeePassport">
@@ -1125,39 +1125,39 @@ FROM [dbo].[vw_AssetCurrentLocation] AS [vw_AssetCurrentLocation]</DefiningQuery
             <PropertyRef Name="CardID" />
             <PropertyRef Name="InventoryNumber" />
             <PropertyRef Name="AssetName" />
+            <PropertyRef Name="ModelID" />
             <PropertyRef Name="Brand" />
             <PropertyRef Name="ModelName" />
-            <PropertyRef Name="AssetType" />
-            <PropertyRef Name="CurrentDepartment" />
-            <PropertyRef Name="CurrentCondition" />
-            <PropertyRef Name="ResponsiblePerson" />
-            <PropertyRef Name="ModelID" />
             <PropertyRef Name="AssetTypeID" />
+            <PropertyRef Name="AssetType" />
             <PropertyRef Name="ConditionID" />
+            <PropertyRef Name="CurrentCondition" />
             <PropertyRef Name="DepartmentID" />
+            <PropertyRef Name="CurrentDepartment" />
             <PropertyRef Name="ResponsibleEmployeeID" />
+            <PropertyRef Name="ResponsiblePerson" />
           </Key>
           <Property Name="CardID" Type="Int32" Nullable="false" />
           <Property Name="InventoryNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AssetName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ModelID" Type="Int32" Nullable="false" />
           <Property Name="Brand" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ModelName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="AssetTypeID" Type="Int32" Nullable="false" />
           <Property Name="AssetType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CurrentDepartment" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="CurrentRoom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ConditionID" Type="Int32" Nullable="false" />
           <Property Name="CurrentCondition" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="CurrentDepartment" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RoomID" Type="Int32" />
+          <Property Name="CurrentRoom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ResponsibleEmployeeID" Type="Int32" Nullable="false" />
           <Property Name="ResponsiblePerson" Type="String" Nullable="false" MaxLength="302" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentHolderID" Type="Int32" />
           <Property Name="CurrentHolder" Type="String" MaxLength="302" FixedLength="false" Unicode="true" />
           <Property Name="CommissionDate" Type="DateTime" Precision="0" />
           <Property Name="DecommissionDate" Type="DateTime" Precision="0" />
           <Property Name="InitialCost" Type="Decimal" Precision="15" Scale="2" />
-          <Property Name="ModelID" Type="Int32" Nullable="false" />
-          <Property Name="AssetTypeID" Type="Int32" Nullable="false" />
-          <Property Name="ConditionID" Type="Int32" Nullable="false" />
-          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
-          <Property Name="RoomID" Type="Int32" />
-          <Property Name="ResponsibleEmployeeID" Type="Int32" Nullable="false" />
-          <Property Name="CurrentHolderID" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1331,24 +1331,24 @@ FROM [dbo].[vw_AssetCurrentLocation] AS [vw_AssetCurrentLocation]</DefiningQuery
           <EntitySetMapping Name="vw_AssetCurrentLocation">
             <EntityTypeMapping TypeName="MaterialAssetsModel.vw_AssetCurrentLocation">
               <MappingFragment StoreEntitySet="vw_AssetCurrentLocation">
-                <ScalarProperty Name="CurrentHolderID" ColumnName="CurrentHolderID" />
-                <ScalarProperty Name="ResponsibleEmployeeID" ColumnName="ResponsibleEmployeeID" />
-                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
-                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-                <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
-                <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
-                <ScalarProperty Name="ModelID" ColumnName="ModelID" />
                 <ScalarProperty Name="InitialCost" ColumnName="InitialCost" />
                 <ScalarProperty Name="DecommissionDate" ColumnName="DecommissionDate" />
                 <ScalarProperty Name="CommissionDate" ColumnName="CommissionDate" />
                 <ScalarProperty Name="CurrentHolder" ColumnName="CurrentHolder" />
+                <ScalarProperty Name="CurrentHolderID" ColumnName="CurrentHolderID" />
                 <ScalarProperty Name="ResponsiblePerson" ColumnName="ResponsiblePerson" />
-                <ScalarProperty Name="CurrentCondition" ColumnName="CurrentCondition" />
+                <ScalarProperty Name="ResponsibleEmployeeID" ColumnName="ResponsibleEmployeeID" />
                 <ScalarProperty Name="CurrentRoom" ColumnName="CurrentRoom" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
                 <ScalarProperty Name="CurrentDepartment" ColumnName="CurrentDepartment" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="CurrentCondition" ColumnName="CurrentCondition" />
+                <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
                 <ScalarProperty Name="AssetType" ColumnName="AssetType" />
+                <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
                 <ScalarProperty Name="ModelName" ColumnName="ModelName" />
                 <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ModelID" ColumnName="ModelID" />
                 <ScalarProperty Name="AssetName" ColumnName="AssetName" />
                 <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />
                 <ScalarProperty Name="CardID" ColumnName="CardID" />

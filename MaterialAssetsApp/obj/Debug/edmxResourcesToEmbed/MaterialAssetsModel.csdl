@@ -118,7 +118,7 @@
     <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="SNILS" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="INN" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
-    <Property Name="PassportID" Type="Int32" Nullable="false" />
+    <Property Name="PassportID" Type="Int32" Nullable="true" />
     <Property Name="PhoneMobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="PhoneWork" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
@@ -397,7 +397,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Employee_Passport">
-    <End Role="EmployeePassport" Type="Self.EmployeePassport" Multiplicity="1" />
+    <End Role="EmployeePassport" Type="Self.EmployeePassport" Multiplicity="0..1" />
     <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="EmployeePassport">
@@ -549,38 +549,38 @@
       <PropertyRef Name="CardID" />
       <PropertyRef Name="InventoryNumber" />
       <PropertyRef Name="AssetName" />
+      <PropertyRef Name="ModelID" />
       <PropertyRef Name="Brand" />
       <PropertyRef Name="ModelName" />
-      <PropertyRef Name="AssetType" />
-      <PropertyRef Name="CurrentDepartment" />
-      <PropertyRef Name="CurrentCondition" />
-      <PropertyRef Name="ResponsiblePerson" />
-      <PropertyRef Name="ModelID" />
       <PropertyRef Name="AssetTypeID" />
+      <PropertyRef Name="AssetType" />
       <PropertyRef Name="ConditionID" />
+      <PropertyRef Name="CurrentCondition" />
       <PropertyRef Name="DepartmentID" />
+      <PropertyRef Name="CurrentDepartment" />
       <PropertyRef Name="ResponsibleEmployeeID" />
+      <PropertyRef Name="ResponsiblePerson" />
     </Key>
     <Property Name="CardID" Type="Int32" Nullable="false" />
     <Property Name="InventoryNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="AssetName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ModelID" Type="Int32" Nullable="false" />
     <Property Name="Brand" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="ModelName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="AssetTypeID" Type="Int32" Nullable="false" />
     <Property Name="AssetType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="CurrentDepartment" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="CurrentRoom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ConditionID" Type="Int32" Nullable="false" />
     <Property Name="CurrentCondition" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+    <Property Name="CurrentDepartment" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="RoomID" Type="Int32" />
+    <Property Name="CurrentRoom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ResponsibleEmployeeID" Type="Int32" Nullable="false" />
     <Property Name="ResponsiblePerson" Type="String" Nullable="false" MaxLength="302" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentHolderID" Type="Int32" />
     <Property Name="CurrentHolder" Type="String" MaxLength="302" FixedLength="false" Unicode="true" />
     <Property Name="CommissionDate" Type="DateTime" Precision="0" />
     <Property Name="DecommissionDate" Type="DateTime" Precision="0" />
     <Property Name="InitialCost" Type="Decimal" Precision="15" Scale="2" />
-    <Property Name="ModelID" Type="Int32" Nullable="false" />
-    <Property Name="AssetTypeID" Type="Int32" Nullable="false" />
-    <Property Name="ConditionID" Type="Int32" Nullable="false" />
-    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
-    <Property Name="RoomID" Type="Int32" />
-    <Property Name="ResponsibleEmployeeID" Type="Int32" Nullable="false" />
-    <Property Name="CurrentHolderID" Type="Int32" />
   </EntityType>
 </Schema>

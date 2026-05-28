@@ -1,45 +1,53 @@
 ﻿<Page x:Class="MaterialAssetsApp.Pages.AddAssetTypePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      Title="Добавить тип">
+      Title="Типы технических средств">
+
     <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Добавление типа технического средства"
-                   FontSize="20"
-                   FontWeight="Bold"
-                   Margin="0,0,0,10"/>
+        <!-- Список типов -->
+        <GroupBox Header="Список типов" Margin="0,0,10,0">
+            <DataGrid x:Name="dgTypes"
+                      AutoGenerateColumns="False"
+                      SelectionChanged="dgTypes_SelectionChanged">
 
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="300"/>
-            </Grid.ColumnDefinitions>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding TypeID}" Width="50"/>
+                    <DataGridTextColumn Header="Название типа" Binding="{Binding TypeName}" Width="*" />
+                </DataGrid.Columns>
 
-            <TextBlock Grid.Column="0"
-                       Text="Название типа:"
-                       Margin="0,0,5,5"
-                       VerticalAlignment="Center"/>
-            <TextBox   Grid.Column="1"
-                       x:Name="txtTypeName"
-                       Margin="0,0,0,5"/>
-        </Grid>
+            </DataGrid>
+        </GroupBox>
 
-        <StackPanel Grid.Row="2"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Right"
-                    Margin="0,10,0,0">
-            <Button Content="Сохранить"
-                    Width="120"
-                    Margin="0,0,10,0"
-                    Click="BtnSave_Click"/>
-            <Button Content="Очистить"
-                    Width="120"
-                    Click="BtnClear_Click"/>
+        <!-- Редактирование -->
+        <StackPanel Grid.Column="1" Margin="10,0,0,0">
+
+            <TextBlock Text="Редактирование типа"
+                       FontSize="20"
+                       FontWeight="Bold"
+                       Margin="0,0,0,10"/>
+
+            <TextBlock Text="Название типа:"/>
+            <TextBox x:Name="txtTypeName" Margin="0,0,0,10"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+
+
+                <Button Content="Сохранить"
+                        Width="120"
+                        Margin="0,0,10,0"
+                        Click="BtnSave_Click"/>
+
+                <Button Content="Удалить"
+                        Width="120"
+                        Click="BtnDelete_Click"/>
+            </StackPanel>
+
         </StackPanel>
+
     </Grid>
 </Page>

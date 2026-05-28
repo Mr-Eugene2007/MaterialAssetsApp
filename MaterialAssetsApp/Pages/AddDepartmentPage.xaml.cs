@@ -6,23 +6,49 @@ namespace MaterialAssetsApp.Pages
 {
     public partial class AddDepartmentPage : Page
     {
-        private MaterialAssetsEntities _context;
+        private readonly MaterialAssetsEntities _context;
+        private Department _selectedDepartment;
 
         public AddDepartmentPage()
         {
             InitializeComponent();
             _context = new MaterialAssetsEntities();
+
+            LoadDepartments();
             LoadParentDepartments();
+        }
+
+        private void LoadDepartments()
+        {
+            dgDepartments.ItemsSource = _context.Departments
+                .OrderBy(d => d.DepartmentName)
+                .ToList();
         }
 
         private void LoadParentDepartments()
         {
-            // Подразделение может быть без родителя, поэтому ComboBox необязателен
-            var departments = _context.Departments
-                                      .OrderBy(d => d.DepartmentName)
-                                      .ToList();
+            cbParentDepartment.ItemsSource = _context.Departments
+                .OrderBy(d => d.DepartmentName)
+                .ToList();
+        }
 
-            cbParentDepartment.ItemsSource = departments;
+        private void dgDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _selectedDepartment = dgDepartments.SelectedItem as Department;
+
+            if (_selectedDepartment != null)
+            {
+                txtDepartmentName.Text = _selectedDepartment.DepartmentName;
+                cbParentDepartment.SelectedValue = _selectedDepartment.ParentID;
+            }
+        }
+
+        private void BtnAddNew_Click(object sender, RoutedEventArgs e)
+        {
+            dgDepartments.SelectedItem = null;
+            _selectedDepartment = null;
+
+            txtDepartmentName.Clear();
             cbParentDepartment.SelectedIndex = -1;
         }
 
@@ -30,46 +56,62 @@ namespace MaterialAssetsApp.Pages
         {
             if (string.IsNullOrWhiteSpace(txtDepartmentName.Text))
             {
-                MessageBox.Show("Введите название подразделения.",
-                                "Ошибка",
-                                MessageBoxButton.OK,
-                                MessageBoxImage.Warning);
+                MessageBox.Show("Введите название подразделения.");
                 return;
             }
 
-            try
+            // Редактирование
+            if (_selectedDepartment != null)
             {
-                var dep = new Department
-                {
-                    DepartmentName = txtDepartmentName.Text.Trim(),
-                    ParentID = cbParentDepartment.SelectedItem is Department parent
-                                ? (int?)parent.DepartmentID
-                                : null
-                };
+                _selectedDepartment.DepartmentName = txtDepartmentName.Text.Trim();
+                _selectedDepartment.ParentID = cbParentDepartment.SelectedValue as int?;
 
-                _context.Departments.Add(dep);
                 _context.SaveChanges();
+                LoadDepartments();
 
-                MessageBox.Show("Подразделение успешно добавлено.",
-                                "Успех",
-                                MessageBoxButton.OK,
-                                MessageBoxImage.Information);
-
-                LoadParentDepartments(); // обновим список, чтобы новое тоже появилось
+                MessageBox.Show("Подразделение обновлено.");
+                return;
             }
-            catch (System.Exception ex)
+
+            // Добавление
+            var newDep = new Department
             {
-                MessageBox.Show("Ошибка при сохранении подразделения:\n" + ex.Message,
-                                "Ошибка",
-                                MessageBoxButton.OK,
-                                MessageBoxImage.Error);
-            }
+                DepartmentName = txtDepartmentName.Text.Trim(),
+                ParentID = cbParentDepartment.SelectedValue as int?
+            };
+
+            _context.Departments.Add(newDep);
+            _context.SaveChanges();
+
+            LoadDepartments();
+            MessageBox.Show("Подразделение добавлено.");
         }
 
-        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
+            if (_selectedDepartment == null)
+            {
+                MessageBox.Show("Выберите подразделение для удаления.");
+                return;
+            }
+
+            if (MessageBox.Show("Удалить выбранное подразделение?",
+                                "Подтверждение",
+                                MessageBoxButton.YesNo,
+                                MessageBoxImage.Question) != MessageBoxResult.Yes)
+                return;
+
+            _context.Departments.Remove(_selectedDepartment);
+            _context.SaveChanges();
+
+            LoadDepartments();
+
             txtDepartmentName.Clear();
             cbParentDepartment.SelectedIndex = -1;
+
+            _selectedDepartment = null;
+
+            MessageBox.Show("Подразделение удалено.");
         }
     }
 }

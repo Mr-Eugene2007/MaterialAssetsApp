@@ -92,7 +92,7 @@
     <Property Name="BirthDate" Type="date" Nullable="false" />
     <Property Name="SNILS" Type="char" MaxLength="14" Nullable="false" />
     <Property Name="INN" Type="char" MaxLength="12" />
-    <Property Name="PassportID" Type="int" Nullable="false" />
+    <Property Name="PassportID" Type="int" />
     <Property Name="PhoneMobile" Type="nvarchar" MaxLength="20" />
     <Property Name="PhoneWork" Type="nvarchar" MaxLength="20" />
     <Property Name="Email" Type="nvarchar" MaxLength="150" />
@@ -300,7 +300,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Employee_Passport">
-    <End Role="EmployeePassport" Type="Self.EmployeePassport" Multiplicity="1" />
+    <End Role="EmployeePassport" Type="Self.EmployeePassport" Multiplicity="0..1" />
     <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="EmployeePassport">

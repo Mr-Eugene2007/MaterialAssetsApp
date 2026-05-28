@@ -96,10 +96,20 @@
     <Compile Include="EmployeePosition.cs">
       <DependentUpon>MaterialAssetsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MaterialAssetsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaterialAssetsModel.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="MaterialAssetsModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MaterialAssetsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialAssetsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaterialAssetsModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Pages\AddAssetTypePage.xaml.cs">
       <DependentUpon>AddAssetTypePage.xaml</DependentUpon>
@@ -253,16 +263,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MaterialAssetsModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MaterialAssetsModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MaterialAssetsModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MaterialAssetsModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -297,19 +297,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="MaterialAssetsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MaterialAssetsModel.Context.cs</LastGenOutput>
       <DependentUpon>MaterialAssetsModel.edmx</DependentUpon>
+      <LastGenOutput>MaterialAssetsModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="MaterialAssetsModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MaterialAssetsModel.edmx</DependentUpon>
       <LastGenOutput>MaterialAssetsModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

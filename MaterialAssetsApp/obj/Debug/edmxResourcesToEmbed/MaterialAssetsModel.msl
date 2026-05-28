@@ -167,24 +167,24 @@
     <EntitySetMapping Name="vw_AssetCurrentLocation">
       <EntityTypeMapping TypeName="MaterialAssetsModel.vw_AssetCurrentLocation">
         <MappingFragment StoreEntitySet="vw_AssetCurrentLocation">
-          <ScalarProperty Name="CurrentHolderID" ColumnName="CurrentHolderID" />
-          <ScalarProperty Name="ResponsibleEmployeeID" ColumnName="ResponsibleEmployeeID" />
-          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
-          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-          <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
-          <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
-          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
           <ScalarProperty Name="InitialCost" ColumnName="InitialCost" />
           <ScalarProperty Name="DecommissionDate" ColumnName="DecommissionDate" />
           <ScalarProperty Name="CommissionDate" ColumnName="CommissionDate" />
           <ScalarProperty Name="CurrentHolder" ColumnName="CurrentHolder" />
+          <ScalarProperty Name="CurrentHolderID" ColumnName="CurrentHolderID" />
           <ScalarProperty Name="ResponsiblePerson" ColumnName="ResponsiblePerson" />
-          <ScalarProperty Name="CurrentCondition" ColumnName="CurrentCondition" />
+          <ScalarProperty Name="ResponsibleEmployeeID" ColumnName="ResponsibleEmployeeID" />
           <ScalarProperty Name="CurrentRoom" ColumnName="CurrentRoom" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
           <ScalarProperty Name="CurrentDepartment" ColumnName="CurrentDepartment" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="CurrentCondition" ColumnName="CurrentCondition" />
+          <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
           <ScalarProperty Name="AssetType" ColumnName="AssetType" />
+          <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
           <ScalarProperty Name="ModelName" ColumnName="ModelName" />
           <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
           <ScalarProperty Name="AssetName" ColumnName="AssetName" />
           <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />
           <ScalarProperty Name="CardID" ColumnName="CardID" />
