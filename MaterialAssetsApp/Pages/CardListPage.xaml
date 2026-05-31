@@ -6,17 +6,50 @@
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <!-- Заголовок -->
             <RowDefinition Height="Auto"/>
+            <!-- Массовое перемещение -->
+            <RowDefinition Height="*"/>
+            <!-- Таблица -->
+            <RowDefinition Height="Auto"/>
+            <!-- Назад -->
         </Grid.RowDefinitions>
 
+        <!-- Заголовок -->
         <TextBlock x:Name="txtTitle"
                    FontSize="20"
                    FontWeight="Bold"
                    Margin="0,0,0,15"/>
 
+        <!-- Блок массового перемещения -->
+        <StackPanel Grid.Row="1"
+            Orientation="Horizontal"
+            Margin="0,0,0,15"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left">
+
+            <TextBlock Text="Увольняемый:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <ComboBox x:Name="cbOldEmployee"
+              Width="200"
+              DisplayMemberPath="FullName"
+              SelectedValuePath="EmployeeID"
+              Margin="0,0,20,0"/>
+
+            <TextBlock Text="Новый держатель:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <ComboBox x:Name="cbNewEmployee"
+              Width="200"
+              DisplayMemberPath="FullName"
+              SelectedValuePath="EmployeeID"
+              Margin="0,0,20,0"/>
+
+            <Button Content="Массовое перемещение"
+            Width="180"/>
+        </StackPanel>
+
+
+        <!-- Таблица карточек -->
         <DataGrid x:Name="dgCards"
-                  Grid.Row="1"
+                  Grid.Row="2"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
                   MouseDoubleClick="dgCards_MouseDoubleClick">
@@ -33,7 +66,8 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Grid.Row="2"
+        <!-- Кнопка назад -->
+        <Button Grid.Row="3"
                 Content="Назад"
                 Width="120"
                 HorizontalAlignment="Right"

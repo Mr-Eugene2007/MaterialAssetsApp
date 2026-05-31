@@ -61,15 +61,19 @@ namespace MaterialAssetsApp.Pages
             txtSerialNumber.Text = _card.SerialNumber;
             dpManufactureDate.SelectedDate = _card.ManufactureDate;
             dpCommissionDate.SelectedDate = _card.CommissionDate;
+
+            dpDecommissionDate.SelectedDate = _card.DecommissionDate;  
+
             cbCondition.SelectedValue = _card.ConditionID;
             cbDepartment.SelectedValue = _card.DepartmentID;
 
             LoadRooms(_card.DepartmentID);
             cbRoom.SelectedValue = _card.RoomID;
 
-            cbResponsible.SelectedValue = _card.ResponsibleEmployeeID;
+            cbResponsible.SelectedValue = 10;
             cbHolder.SelectedValue = _card.CurrentHolderID;
         }
+
 
         private void LoadRooms(int departmentId)
         {
@@ -149,10 +153,13 @@ namespace MaterialAssetsApp.Pages
             _card.SerialNumber = txtSerialNumber.Text.Trim();
             _card.ManufactureDate = dpManufactureDate.SelectedDate;
             _card.CommissionDate = dpCommissionDate.SelectedDate;
+
+            _card.DecommissionDate = dpDecommissionDate.SelectedDate;  
+
             _card.ConditionID = (int)cbCondition.SelectedValue;
             _card.DepartmentID = (int)cbDepartment.SelectedValue;
             _card.RoomID = cbRoom.SelectedValue as int?;
-            _card.ResponsibleEmployeeID = (int)cbResponsible.SelectedValue;
+            _card.ResponsibleEmployeeID = 10;
             _card.CurrentHolderID = cbHolder.SelectedValue as int?;
 
             _context.SaveChanges();
@@ -162,8 +169,9 @@ namespace MaterialAssetsApp.Pages
                             MessageBoxButton.OK,
                             MessageBoxImage.Information);
 
-            LoadComponents(); // на случай, если что-то изменилось через движения
+            LoadComponents();
         }
+
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
@@ -227,7 +235,7 @@ namespace MaterialAssetsApp.Pages
                 }
 
                 // ───────────────────────────────────────────────
-                // ОСНОВНЫЕ ДАННЫЕ
+                // ОСНОВНЫЕ ДАННЫЕ (исправлено)
                 // ───────────────────────────────────────────────
                 Add("Номер карточки", _card.CardID.ToString());
                 Add("Инвентарный номер", _card.InventoryNumber);
@@ -235,8 +243,6 @@ namespace MaterialAssetsApp.Pages
                 Add("Тип", _card.AssetModel?.AssetType?.TypeName ?? "-");
                 Add("Модель", _card.AssetModel?.ModelName ?? "-");
                 Add("Серийный номер", _card.SerialNumber ?? "-");
-                Add("Подразделение", _card.Department?.DepartmentName ?? "-");
-                Add("Кабинет", _card.Room?.RoomNumber ?? "-");
 
                 Add("Ответственный",
                     _card.Employee != null
@@ -248,7 +254,6 @@ namespace MaterialAssetsApp.Pages
                         ? $"{_card.Employee1.LastName} {_card.Employee1.FirstName}"
                         : "-");
 
-                Add("Состояние", _card.AssetCondition?.ConditionName ?? "-");
                 Add("Дата выпуска", _card.ManufactureDate?.ToShortDateString() ?? "-");
                 Add("Дата ввода в эксплуатацию", _card.CommissionDate?.ToShortDateString() ?? "-");
                 Add("Дата списания", _card.DecommissionDate?.ToShortDateString() ?? "-");
@@ -269,7 +274,6 @@ namespace MaterialAssetsApp.Pages
                 compTable.Borders.Enable = 1;
                 compTable.Rows.Alignment = Word.WdRowAlignment.wdAlignRowCenter;
 
-                // Заголовки
                 compTable.Cell(1, 1).Range.Text = "Название";
                 compTable.Cell(1, 2).Range.Text = "Номер";
                 compTable.Cell(1, 3).Range.Text = "Кол-во";
@@ -286,11 +290,13 @@ namespace MaterialAssetsApp.Pages
                 }
 
                 // ───────────────────────────────────────────────
-                // ИСТОРИЯ ПЕРЕМЕЩЕНИЙ
+                // ИСТОРИЯ ПЕРЕМЕЩЕНИЙ — НОВАЯ СТРАНИЦА
                 // ───────────────────────────────────────────────
 
+                doc.Words.Last.InsertBreak(Word.WdBreakType.wdPageBreak);
+
                 Word.Paragraph p2 = doc.Paragraphs.Add();
-                p2.Range.Text = "\nИСТОРИЯ ПЕРЕМЕЩЕНИЙ";
+                p2.Range.Text = "ИСТОРИЯ ПЕРЕМЕЩЕНИЙ";
                 p2.Range.Font.Size = 16;
                 p2.Range.Font.Bold = 1;
                 p2.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
@@ -305,8 +311,8 @@ namespace MaterialAssetsApp.Pages
                 table.Cell(1, 2).Range.Text = "Дата";
                 table.Cell(1, 3).Range.Text = "Подразделение";
                 table.Cell(1, 4).Range.Text = "Кабинет";
-                table.Cell(1, 5).Range.Text = "Держатель";
-                table.Cell(1, 6).Range.Text = "Передал";
+                table.Cell(1, 5).Range.Text = "Подпись";      // исправлено
+                table.Cell(1, 6).Range.Text = "Держатель";    // исправлено
                 table.Cell(1, 7).Range.Text = "Состояние";
 
                 int row = 2;
@@ -317,16 +323,16 @@ namespace MaterialAssetsApp.Pages
                     table.Cell(row, 3).Range.Text = m.Department?.DepartmentName ?? "-";
                     table.Cell(row, 4).Range.Text = m.Room?.RoomNumber ?? "-";
 
-                    table.Cell(row, 5).Range.Text =
+                    // Колонка 5 — Подпись (пустая)
+                    table.Cell(row, 5).Range.Text = "";
+
+                    // Колонка 6 — Держатель
+                    table.Cell(row, 6).Range.Text =
                         m.Employee != null
                             ? $"{m.Employee.LastName} {m.Employee.FirstName}"
                             : "-";
 
-                    table.Cell(row, 6).Range.Text =
-                        m.Employee1 != null
-                            ? $"{m.Employee1.LastName} {m.Employee1.FirstName}"
-                            : "-";
-
+                    // Колонка 7 — Состояние
                     table.Cell(row, 7).Range.Text = m.AssetCondition?.ConditionName ?? "-";
 
                     row++;
@@ -352,6 +358,7 @@ namespace MaterialAssetsApp.Pages
                 MessageBox.Show("Ошибка печати:\n" + ex.Message);
             }
         }
+
 
     }
 }
