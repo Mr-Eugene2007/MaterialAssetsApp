@@ -60,6 +60,13 @@ namespace MaterialAssetsApp.Pages
             dgCards.ItemsSource = data;
         }
 
+        private void BtnOpenMassMove_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow)
+                .MainFrame.Navigate(new MassMovePage());
+        }
+
+
         private void dgCards_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (dgCards.SelectedItem == null)

@@ -54,3 +54,5 @@ C:\Users\velts\source\repos\MaterialAssetsApp\MaterialAssetsApp\obj\Debug\Pages\
 C:\Users\velts\source\repos\MaterialAssetsApp\MaterialAssetsApp\obj\Debug\Pages\EditComponentPage.baml
 C:\Users\velts\source\repos\MaterialAssetsApp\MaterialAssetsApp\obj\Debug\Pages\AddComponentPage.g.cs
 C:\Users\velts\source\repos\MaterialAssetsApp\MaterialAssetsApp\obj\Debug\MaterialAssetsApp.exe.config
+C:\Users\velts\source\repos\MaterialAssetsApp\MaterialAssetsApp\obj\Debug\Pages\MassMovePage.baml
+C:\Users\velts\source\repos\MaterialAssetsApp\MaterialAssetsApp\obj\Debug\Pages\MassMovePage.g.cs

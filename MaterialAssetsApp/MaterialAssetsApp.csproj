@@ -150,6 +150,9 @@
     <Compile Include="Pages\EditMovementPage.xaml.cs">
       <DependentUpon>EditMovementPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MassMovePage.xaml.cs">
+      <DependentUpon>MassMovePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MovementHistoryPage.xaml.cs">
       <DependentUpon>MovementHistoryPage.xaml</DependentUpon>
     </Compile>
@@ -238,6 +241,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\EditMovementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MassMovePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
