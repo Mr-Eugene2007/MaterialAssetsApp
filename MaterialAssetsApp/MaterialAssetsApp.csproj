@@ -69,6 +69,7 @@
     <Compile Include="AccountingCard.cs">
       <DependentUpon>MaterialAssetsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppSettings.cs" />
     <Compile Include="AssetComponent.cs">
       <DependentUpon>MaterialAssetsModel.tt</DependentUpon>
     </Compile>

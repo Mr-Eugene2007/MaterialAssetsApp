@@ -68,6 +68,7 @@ namespace MaterialAssetsApp
             MainFrame.Navigate(new Pages.SearchDepartmentPage());
         }
 
+        // В конце LoadCurrentEmployee — восстанавливаем сохранённый выбор
         private void LoadCurrentEmployee()
         {
             var context = new MaterialAssetsEntities();
@@ -79,12 +80,21 @@ namespace MaterialAssetsApp
                     FullName = e.LastName + " " + e.FirstName
                 })
                 .ToList();
+
+            // Восстанавливаем последний выбор
+            if (AppSettings.LastEmployeeID != 0)
+                cbCurrentEmployee.SelectedValue = AppSettings.LastEmployeeID;
         }
 
+        // При смене — сохраняем
         private void cbCurrentEmployee_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cbCurrentEmployee.SelectedValue == null) return;
+
             CurrentSession.EmployeeID = (int)cbCurrentEmployee.SelectedValue;
+
+            AppSettings.LastEmployeeID = CurrentSession.EmployeeID;
+            Properties.Settings.Default.Save();
         }
     }
 }

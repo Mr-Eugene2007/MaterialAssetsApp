@@ -24,25 +24,21 @@ namespace MaterialAssetsApp.Pages
         private void LoadCards()
         {
             IQueryable<AccountingCard> query = _context.AccountingCards;
-
             switch (_mode)
             {
                 case "employee":
                     txtTitle.Text = "Карточки сотрудника";
                     query = query.Where(c => c.CurrentHolderID == _id);
                     break;
-
                 case "department":
                     txtTitle.Text = "Карточки подразделения";
                     query = query.Where(c => c.DepartmentID == _id);
                     break;
-
                 case "room":
                     txtTitle.Text = "Карточки кабинета";
                     query = query.Where(c => c.RoomID == _id);
                     break;
             }
-
             var data = query
                 .Select(c => new CardListItem
                 {
@@ -58,9 +54,7 @@ namespace MaterialAssetsApp.Pages
                     ConditionName = c.AssetCondition.ConditionName
                 })
                 .ToList();
-
             dgCards.ItemsSource = data;
-
         }
 
 
@@ -109,8 +103,8 @@ namespace MaterialAssetsApp.Pages
                 return;
             }
 
-    ((MainWindow)Application.Current.MainWindow)
-        .MainFrame.Navigate(new MassMoveSelectedPage(selected));
+            ((MainWindow)Application.Current.MainWindow)
+                .MainFrame.Navigate(new MassMoveSelectedPage(selected));
         }
 
     }

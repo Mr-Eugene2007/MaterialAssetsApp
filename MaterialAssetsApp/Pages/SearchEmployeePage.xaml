@@ -54,11 +54,16 @@
             </StackPanel>
 
             <!-- Кнопка -->
-            <StackPanel Grid.Column="4" VerticalAlignment="Bottom">
+            <StackPanel Grid.Column="4" VerticalAlignment="Bottom" Orientation="Horizontal">
                 <Button Content="Поиск"
-                        Width="120"
-                        Height="30"
-                        Click="BtnSearch_Click"/>
+            Width="120"
+            Height="30"
+            Margin="0,0,10,0"
+            Click="BtnSearch_Click"/>
+                <Button Content="Сбросить"
+            Width="120"
+            Height="30"
+            Click="BtnReset_Click"/>
             </StackPanel>
         </Grid>
 

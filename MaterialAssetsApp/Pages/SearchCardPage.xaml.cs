@@ -87,5 +87,15 @@ namespace MaterialAssetsApp.Pages
             NavigationService.Navigate(new EditAccountingCardPage(cardId));
         }
 
+        private void BtnReset_Click(object sender, RoutedEventArgs e)
+        {
+            txtInvNumber.Clear();
+            txtAssetName.Clear();
+            cbType.SelectedIndex = -1;
+            cbModel.SelectedIndex = -1;
+            cbDepartment.SelectedIndex = -1;
+            LoadAllCards();
+        }
+
     }
 }

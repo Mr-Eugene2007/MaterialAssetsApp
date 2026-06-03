@@ -78,5 +78,12 @@ namespace MaterialAssetsApp.Pages
                 .MainFrame.Navigate(new CardListPage("room", roomId));
         }
 
+        private void BtnReset_Click(object sender, RoutedEventArgs e)
+        {
+            txtRoomNumber.Clear();
+            cbDepartment.SelectedIndex = -1;
+            LoadAllRooms();
+        }
+
     }
 }

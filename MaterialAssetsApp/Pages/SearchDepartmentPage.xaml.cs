@@ -81,5 +81,12 @@ namespace MaterialAssetsApp.Pages
                 .MainFrame.Navigate(new CardListPage("department", departmentId));
         }
 
+        private void BtnReset_Click(object sender, RoutedEventArgs e)
+        {
+            txtDepartmentName.Clear();
+            cbParent.SelectedIndex = -1;
+            LoadAllDepartments();
+        }
+
     }
 }

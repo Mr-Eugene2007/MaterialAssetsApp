@@ -3,23 +3,51 @@
   "WorkspaceRootPath": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\editaccountingcardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\editaccountingcardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchroompage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchroompage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchroompage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchroompage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchemployeepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchemployeepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchemployeepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchemployeepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchdepartmentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchdepartmentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchdepartmentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchdepartmentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchcardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchcardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|c:\\users\\velts\\source\\repos\\materialassetsapp\\materialassetsapp\\pages\\searchcardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchcardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\editaccountingcardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\editaccountingcardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\createaccountingcardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\createaccountingcardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\cardlistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\cardlistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\createaccountingcardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\createaccountingcardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|c:\\users\\velts\\source\\repos\\materialassetsapp\\materialassetsapp\\pages\\cardlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\cardlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\cardlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -31,31 +59,35 @@
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|c:\\users\\velts\\source\\repos\\materialassetsapp\\materialassetsapp\\currentsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|c:\\users\\velts\\source\\repos\\materialassetsapp\\materialassetsapp\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\editaccountingcardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\editaccountingcardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\addcomponentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\addcomponentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\addcomponentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\addcomponentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\createaccountingcardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\createaccountingcardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\currentsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\currentsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchroompage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchroompage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchemployeepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchemployeepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchdepartmentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchdepartmentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchcardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchcardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\movementhistorypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\movementhistorypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|c:\\users\\velts\\source\\repos\\materialassetsapp\\materialassetsapp\\pages\\massmoveselectedpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\massmoveselectedpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\massmoveselectedpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -67,11 +99,7 @@
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\editcomponentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\cardlistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\cardlistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|c:\\users\\velts\\source\\repos\\materialassetsapp\\materialassetsapp\\pages\\massmoveselectedpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\massmoveselectedpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\massmoveselectedpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -79,11 +107,11 @@
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\assetmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|c:\\users\\velts\\source\\repos\\materialassetsapp\\materialassetsapp\\accountingcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\accountingcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\accountingcard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|c:\\users\\velts\\source\\repos\\materialassetsapp\\materialassetsapp\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -135,10 +163,6 @@
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\assetcondition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\addcomponentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\addcomponentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\addassettypepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\addassettypepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -155,10 +179,6 @@
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\materialassetsmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchcardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchcardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\materialassetsmodel.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\materialassetsmodel.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -167,24 +187,8 @@
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\addpositionpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\addcomponentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\addcomponentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\editcomponentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\editcomponentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchdepartmentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchdepartmentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchroompage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchroompage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\searchemployeepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|solutionrelative:materialassetsapp\\pages\\searchemployeepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AAE2402E-CE51-4C7C-9A87-4519D00DF014}|MaterialAssetsApp\\MaterialAssetsApp.csproj|C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\materialassetsapp\\pages\\editmovementpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -202,106 +206,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CurrentSession.cs",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\CurrentSession.cs",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\CurrentSession.cs",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\CurrentSession.cs",
-              "RelativeToolTip": "MaterialAssetsApp\\CurrentSession.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T04:38:01.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CreateAccountingCardPage.xaml",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-26T10:14:36.945Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SearchEmployeePage.xaml",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-26T10:15:37.067Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "SearchRoomPage.xaml",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchRoomPage.xaml",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchRoomPage.xaml",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchRoomPage.xaml",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\SearchRoomPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-26T10:15:44.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CreateAccountingCardPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml.cs",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml.cs",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml.cs",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAAwIMAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T10:21:14.092Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\MainWindow.xaml",
-              "RelativeToolTip": "MaterialAssetsApp\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-26T10:09:23.542Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MaterialAssetsApp\\MainWindow.xaml.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAmwAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T10:09:22.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CardListPage.xaml",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CardListPage.xaml",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\CardListPage.xaml",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CardListPage.xaml",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\CardListPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-26T19:55:16.597Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "EditAccountingCardPage.xaml",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditAccountingCardPage.xaml",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\EditAccountingCardPage.xaml",
@@ -313,32 +218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EditAccountingCardPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditAccountingCardPage.xaml.cs",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\EditAccountingCardPage.xaml.cs",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditAccountingCardPage.xaml.cs",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\EditAccountingCardPage.xaml.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowEkAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T13:33:31.568Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SearchDepartmentPage.xaml",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-26T10:15:58.245Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
               "Title": "SearchCardPage.xaml",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchCardPage.xaml",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchCardPage.xaml",
@@ -350,79 +230,233 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MovementHistoryPage.xaml",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\MovementHistoryPage.xaml",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\MovementHistoryPage.xaml",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\MovementHistoryPage.xaml",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\MovementHistoryPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-26T18:37:20.036Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "MassMoveSelectedPage.xaml",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\MassMoveSelectedPage.xaml",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\MassMoveSelectedPage.xaml",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\MassMoveSelectedPage.xaml",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\MassMoveSelectedPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-06-03T03:39:23.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "EditMovementPage.xaml",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditMovementPage.xaml",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\EditMovementPage.xaml",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditMovementPage.xaml",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\EditMovementPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-26T18:48:20.306Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "EditComponentPage.xaml",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditComponentPage.xaml",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\EditComponentPage.xaml",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditComponentPage.xaml",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\EditComponentPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-26T23:14:54.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "AddComponentPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddComponentPage.xaml.cs",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddComponentPage.xaml.cs",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddComponentPage.xaml.cs",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\AddComponentPage.xaml.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAwwDgAAAAOAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "CardListPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CardListPage.xaml.cs",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\CardListPage.xaml.cs",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CardListPage.xaml.cs",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\CardListPage.xaml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T23:15:42.615Z"
+              "WhenOpened": "2026-05-26T19:55:32.547Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 6,
+              "Title": "SearchCardPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchCardPage.xaml.cs",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchCardPage.xaml.cs",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchCardPage.xaml.cs",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\SearchCardPage.xaml.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAADwv2AAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T10:27:09.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SearchDepartmentPage.xaml",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T10:15:58.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SearchDepartmentPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml.cs",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml.cs",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml.cs",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAUwFEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T10:26:11.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SearchEmployeePage.xaml",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T10:15:37.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SearchEmployeePage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml.cs",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml.cs",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml.cs",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAiwHsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T10:22:12.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SearchRoomPage.xaml",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchRoomPage.xaml",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchRoomPage.xaml",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchRoomPage.xaml",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\SearchRoomPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T10:15:44.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "SearchRoomPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchRoomPage.xaml.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchRoomPage.xaml.cs",
               "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchRoomPage.xaml.cs",
               "RelativeToolTip": "MaterialAssetsApp\\Pages\\SearchRoomPage.xaml.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAwwFIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAUwEkAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T10:25:27.767Z"
+              "WhenOpened": "2026-05-26T10:25:27.767Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 10,
+              "Title": "CreateAccountingCardPage.xaml",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T10:14:36.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CardListPage.xaml",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CardListPage.xaml",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\CardListPage.xaml",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CardListPage.xaml",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\CardListPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T19:55:16.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MaterialAssetsApp\\MainWindow.xaml.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAYwGMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T10:09:22.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\MainWindow.xaml",
+              "RelativeToolTip": "MaterialAssetsApp\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T10:09:23.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AppSettings.cs",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\AppSettings.cs",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\AppSettings.cs",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\AppSettings.cs",
+              "RelativeToolTip": "MaterialAssetsApp\\AppSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T05:01:22.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AssetMovement.cs",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\AssetMovement.cs",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\AssetMovement.cs",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\AssetMovement.cs",
+              "RelativeToolTip": "MaterialAssetsApp\\AssetMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-01T18:49:38.636Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AddComponentPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddComponentPage.xaml.cs",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddComponentPage.xaml.cs",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddComponentPage.xaml.cs",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\AddComponentPage.xaml.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAADwv1cAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T23:15:42.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CreateAccountingCardPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml.cs",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml.cs",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml.cs",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\CreateAccountingCardPage.xaml.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAmwFMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T10:21:14.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "EditAccountingCardPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditAccountingCardPage.xaml.cs",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\EditAccountingCardPage.xaml.cs",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditAccountingCardPage.xaml.cs",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\EditAccountingCardPage.xaml.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAcwHIAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-26T13:33:31.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AddComponentPage.xaml",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddComponentPage.xaml",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddComponentPage.xaml",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddComponentPage.xaml",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\AddComponentPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T23:15:36.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
               "Title": "EditComponentPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditComponentPage.xaml.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\EditComponentPage.xaml.cs",
@@ -434,68 +468,63 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "SearchEmployeePage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml.cs",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml.cs",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml.cs",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\SearchEmployeePage.xaml.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAcwHMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 19,
+              "Title": "CurrentSession.cs",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\CurrentSession.cs",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\CurrentSession.cs",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\CurrentSession.cs",
+              "RelativeToolTip": "MaterialAssetsApp\\CurrentSession.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T10:22:12.225Z"
+              "WhenOpened": "2026-06-03T04:38:01.512Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "SearchDepartmentPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml.cs",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml.cs",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml.cs",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\SearchDepartmentPage.xaml.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAA1wFIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T10:26:11.895Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CardListPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CardListPage.xaml.cs",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\CardListPage.xaml.cs",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\CardListPage.xaml.cs",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\CardListPage.xaml.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAmwGsAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T19:55:32.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AssetMovement.cs",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\AssetMovement.cs",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\AssetMovement.cs",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\AssetMovement.cs",
-              "RelativeToolTip": "MaterialAssetsApp\\AssetMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-01T18:49:38.636Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "AddComponentPage.xaml",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddComponentPage.xaml",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddComponentPage.xaml",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddComponentPage.xaml",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\AddComponentPage.xaml",
+              "DocumentIndex": 20,
+              "Title": "MovementHistoryPage.xaml",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\MovementHistoryPage.xaml",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\MovementHistoryPage.xaml",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\MovementHistoryPage.xaml",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\MovementHistoryPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-26T23:15:36.62Z"
+              "WhenOpened": "2026-05-26T18:37:20.036Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 21,
+              "Title": "MassMoveSelectedPage.xaml",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\MassMoveSelectedPage.xaml",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\MassMoveSelectedPage.xaml",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\MassMoveSelectedPage.xaml",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\MassMoveSelectedPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-03T03:39:23.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "EditMovementPage.xaml",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditMovementPage.xaml",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\EditMovementPage.xaml",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditMovementPage.xaml",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\EditMovementPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T18:48:20.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "EditComponentPage.xaml",
+              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditComponentPage.xaml",
+              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\EditComponentPage.xaml",
+              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditComponentPage.xaml",
+              "RelativeToolTip": "MaterialAssetsApp\\Pages\\EditComponentPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-26T23:14:54.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
               "Title": "AddAssetTypePage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddAssetTypePage.xaml.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddAssetTypePage.xaml.cs",
@@ -507,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 41,
               "Title": "AddAssetTypePage.xaml",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddAssetTypePage.xaml",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddAssetTypePage.xaml",
@@ -518,7 +547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 24,
               "Title": "MassMoveSelectedPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\MassMoveSelectedPage.xaml.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\MassMoveSelectedPage.xaml.cs",
@@ -526,12 +555,11 @@
               "RelativeToolTip": "MaterialAssetsApp\\Pages\\MassMoveSelectedPage.xaml.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAAuwHUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:39:30.537Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-03T03:39:30.537Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 26,
               "Title": "AccountingCard.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\AccountingCard.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\AccountingCard.cs",
@@ -539,12 +567,11 @@
               "RelativeToolTip": "MaterialAssetsApp\\AccountingCard.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:57:55.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-03T03:57:55.972Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 28,
               "Title": "MovementHistoryPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\MovementHistoryPage.xaml.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\MovementHistoryPage.xaml.cs",
@@ -556,7 +583,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 35,
               "Title": "AddRoomPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddRoomPage.xaml.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddRoomPage.xaml.cs",
@@ -568,7 +595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 31,
               "Title": "AddEmployeePage.xaml",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddEmployeePage.xaml",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddEmployeePage.xaml",
@@ -579,7 +606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 27,
               "Title": "Employee.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Employee.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Employee.cs",
@@ -587,12 +614,11 @@
               "RelativeToolTip": "MaterialAssetsApp\\Employee.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T03:57:44.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-03T03:57:44.223Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 39,
               "Title": "AssetCondition.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\AssetCondition.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\AssetCondition.cs",
@@ -604,7 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 36,
               "Title": "AddRoomPage.xaml",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddRoomPage.xaml",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddRoomPage.xaml",
@@ -615,7 +641,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 34,
               "Title": "AddPositionPage.xaml",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddPositionPage.xaml",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddPositionPage.xaml",
@@ -626,7 +652,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 30,
               "Title": "AddDepartmentPage.xaml",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddDepartmentPage.xaml",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddDepartmentPage.xaml",
@@ -637,7 +663,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 33,
               "Title": "AddModelPage.xaml",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddModelPage.xaml",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddModelPage.xaml",
@@ -648,19 +674,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "SearchCardPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchCardPage.xaml.cs",
-              "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\SearchCardPage.xaml.cs",
-              "ToolTip": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\SearchCardPage.xaml.cs",
-              "RelativeToolTip": "MaterialAssetsApp\\Pages\\SearchCardPage.xaml.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAhwC0AAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T10:27:09.521Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 44,
               "Title": "MaterialAssetsModel.tt",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\MaterialAssetsModel.tt",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\MaterialAssetsModel.tt",
@@ -672,7 +686,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 43,
               "Title": "MaterialAssetsModel.edmx [Diagram1]",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\MaterialAssetsModel.edmx",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\MaterialAssetsModel.edmx",
@@ -683,7 +697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 45,
               "Title": "AddPositionPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddPositionPage.xaml.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddPositionPage.xaml.cs",
@@ -695,7 +709,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 38,
               "Title": "AddMovementPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddMovementPage.xaml.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddMovementPage.xaml.cs",
@@ -707,7 +721,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 29,
               "Title": "AddDepartmentPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddDepartmentPage.xaml.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddDepartmentPage.xaml.cs",
@@ -719,7 +733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 37,
               "Title": "AddMovementPage.xaml",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddMovementPage.xaml",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddMovementPage.xaml",
@@ -730,7 +744,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 32,
               "Title": "AddModelPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddModelPage.xaml.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddModelPage.xaml.cs",
@@ -742,7 +756,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 42,
               "Title": "AddEmployeePage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\AddEmployeePage.xaml.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\AddEmployeePage.xaml.cs",
@@ -754,7 +768,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "EditMovementPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\velts\\source\\repos\\MaterialAssetsApp\\MaterialAssetsApp\\Pages\\EditMovementPage.xaml.cs",
               "RelativeDocumentMoniker": "MaterialAssetsApp\\Pages\\EditMovementPage.xaml.cs",

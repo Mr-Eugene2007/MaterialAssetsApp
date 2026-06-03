@@ -114,5 +114,14 @@ namespace MaterialAssetsApp.Pages
                 .MainFrame.Navigate(new CardListPage("employee", employeeId));
         }
 
+        private void BtnReset_Click(object sender, RoutedEventArgs e)
+        {
+            txtName.Clear();
+            txtPhone.Clear();
+            cbDepartment.SelectedIndex = -1;
+            cbPosition.SelectedIndex = -1;
+            LoadAllEmployees();
+        }
+
     }
 }

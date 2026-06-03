@@ -106,6 +106,12 @@ namespace MaterialAssetsApp.Pages
             dgComponents.ItemsSource = components;
         }
 
+        private void BtnAddComponent_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow)
+                .MainFrame.Navigate(new AddComponentPage(_card.CardID, LoadComponents));
+        }
+
         private void BtnDeleteComponent_Click(object sender, RoutedEventArgs e)
         {
             if (dgComponents.SelectedItem == null)
