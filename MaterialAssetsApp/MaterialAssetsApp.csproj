@@ -84,6 +84,7 @@
     <Compile Include="AssetType.cs">
       <DependentUpon>MaterialAssetsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CurrentSession.cs" />
     <Compile Include="Department.cs">
       <DependentUpon>MaterialAssetsModel.tt</DependentUpon>
     </Compile>
@@ -150,8 +151,8 @@
     <Compile Include="Pages\EditMovementPage.xaml.cs">
       <DependentUpon>EditMovementPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\MassMovePage.xaml.cs">
-      <DependentUpon>MassMovePage.xaml</DependentUpon>
+    <Compile Include="Pages\MassMoveSelectedPage.xaml.cs">
+      <DependentUpon>MassMoveSelectedPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MovementHistoryPage.xaml.cs">
       <DependentUpon>MovementHistoryPage.xaml</DependentUpon>
@@ -244,7 +245,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\MassMovePage.xaml">
+    <Page Include="Pages\MassMoveSelectedPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

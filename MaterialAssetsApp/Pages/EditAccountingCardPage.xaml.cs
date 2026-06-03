@@ -70,7 +70,7 @@ namespace MaterialAssetsApp.Pages
             LoadRooms(_card.DepartmentID);
             cbRoom.SelectedValue = _card.RoomID;
 
-            cbResponsible.SelectedValue = 10;
+            cbResponsible.SelectedValue = CurrentSession.EmployeeID;
             cbHolder.SelectedValue = _card.CurrentHolderID;
         }
 

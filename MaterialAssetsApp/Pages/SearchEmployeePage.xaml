@@ -68,7 +68,8 @@
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
                   MouseDoubleClick="dgEmployees_MouseDoubleClick"
-                  SelectionMode="Single">
+                  SelectionMode="Extended"
+                  SelectionUnit="FullRow">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding EmployeeID}" Width="60"/>

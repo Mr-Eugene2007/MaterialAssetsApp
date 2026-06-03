@@ -70,6 +70,17 @@
                         Margin="0,0,0,5"
                         Height="35"
                         Click="BtnSearchDepartment_Click"/>
+
+                <Separator Margin="0,10,0,10"/>
+                <!-- Текущий ответственный -->
+                <TextBlock Text="Ответственный:"
+                           FontSize="13"
+                           Margin="0,0,0,5"/>
+                                <ComboBox x:Name="cbCurrentEmployee"
+                          DisplayMemberPath="FullName"
+                          SelectedValuePath="EmployeeID"
+                          SelectionChanged="cbCurrentEmployee_SelectionChanged"
+                          Margin="0,0,0,10"/>
             </StackPanel>
         </ScrollViewer>
 
@@ -78,5 +89,6 @@
                Grid.Column="1"
                NavigationUIVisibility="Hidden"
                Margin="5"/>
+
     </Grid>
 </Window>

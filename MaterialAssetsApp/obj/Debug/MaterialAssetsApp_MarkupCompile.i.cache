@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\velts\source\repos\MaterialAssetsApp\MaterialAssetsApp\App.xaml
-20726348752
+20816848089
 2-1524784259
-42448606509
+431869251453
 19-1906065032
-MainWindow.xaml;Pages\AddAssetTypePage.xaml;Pages\AddComponentPage.xaml;Pages\AddDepartmentPage.xaml;Pages\AddEmployeePage.xaml;Pages\AddModelPage.xaml;Pages\AddMovementPage.xaml;Pages\AddPositionPage.xaml;Pages\AddRoomPage.xaml;Pages\CardListPage.xaml;Pages\CreateAccountingCardPage.xaml;Pages\EditAccountingCardPage.xaml;Pages\EditComponentPage.xaml;Pages\EditMovementPage.xaml;Pages\MassMovePage.xaml;Pages\MovementHistoryPage.xaml;Pages\SearchCardPage.xaml;Pages\SearchDepartmentPage.xaml;Pages\SearchEmployeePage.xaml;Pages\SearchRoomPage.xaml;
+MainWindow.xaml;Pages\AddAssetTypePage.xaml;Pages\AddComponentPage.xaml;Pages\AddDepartmentPage.xaml;Pages\AddEmployeePage.xaml;Pages\AddModelPage.xaml;Pages\AddMovementPage.xaml;Pages\AddPositionPage.xaml;Pages\AddRoomPage.xaml;Pages\CardListPage.xaml;Pages\CreateAccountingCardPage.xaml;Pages\EditAccountingCardPage.xaml;Pages\EditComponentPage.xaml;Pages\EditMovementPage.xaml;Pages\MassMoveSelectedPage.xaml;Pages\MovementHistoryPage.xaml;Pages\SearchCardPage.xaml;Pages\SearchDepartmentPage.xaml;Pages\SearchEmployeePage.xaml;Pages\SearchRoomPage.xaml;
 
-True
+False
 

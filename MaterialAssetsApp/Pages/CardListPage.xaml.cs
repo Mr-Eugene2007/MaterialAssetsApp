@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -43,11 +44,12 @@ namespace MaterialAssetsApp.Pages
             }
 
             var data = query
-                .Select(c => new
+                .Select(c => new CardListItem
                 {
-                    c.CardID,
-                    c.InventoryNumber,
-                    c.AssetName,
+                    IsSelected = false,
+                    CardID = c.CardID,
+                    InventoryNumber = c.InventoryNumber,
+                    AssetName = c.AssetName,
                     TypeName = c.AssetModel.AssetType.TypeName,
                     ModelName = c.AssetModel.ModelName,
                     DepartmentName = c.Department.DepartmentName,
@@ -58,12 +60,7 @@ namespace MaterialAssetsApp.Pages
                 .ToList();
 
             dgCards.ItemsSource = data;
-        }
 
-        private void BtnOpenMassMove_Click(object sender, RoutedEventArgs e)
-        {
-            ((MainWindow)Application.Current.MainWindow)
-                .MainFrame.Navigate(new MassMovePage());
         }
 
 
@@ -84,5 +81,37 @@ namespace MaterialAssetsApp.Pages
             ((MainWindow)Application.Current.MainWindow)
                 .MainFrame.GoBack();
         }
+
+        public class CardListItem
+        {
+            public bool IsSelected { get; set; }
+            public int CardID { get; set; }
+            public string InventoryNumber { get; set; }
+            public string AssetName { get; set; }
+            public string TypeName { get; set; }
+            public string ModelName { get; set; }
+            public string DepartmentName { get; set; }
+            public string RoomNumber { get; set; }
+            public string HolderName { get; set; }
+            public string ConditionName { get; set; }
+        }
+
+        private void BtnMoveSelected_Click(object sender, RoutedEventArgs e)
+        {
+            var selected = dgCards.SelectedItems
+                .Cast<CardListItem>()
+                .Select(x => x.CardID)
+                .ToList();
+
+            if (!selected.Any())
+            {
+                MessageBox.Show("Выберите хотя бы одну карточку.");
+                return;
+            }
+
+    ((MainWindow)Application.Current.MainWindow)
+        .MainFrame.Navigate(new MassMoveSelectedPage(selected));
+        }
+
     }
 }

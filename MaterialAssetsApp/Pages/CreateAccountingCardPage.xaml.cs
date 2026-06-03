@@ -52,7 +52,7 @@ namespace MaterialAssetsApp.Pages
             cbResponsible.ItemsSource = employees;
             cbHolder.ItemsSource = employees;
 
-            cbResponsible.SelectedValue = 10; //автоматические подставление отвественного
+            cbResponsible.SelectedValue = CurrentSession.EmployeeID; //автоматические подставление отвественного
         }
 
         private void cbDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -135,7 +135,7 @@ namespace MaterialAssetsApp.Pages
                     ConditionID = (int)cbCondition.SelectedValue,
                     DepartmentID = (int)cbDepartment.SelectedValue,
                     RoomID = cbRoom.SelectedValue as int?,
-                    ResponsibleEmployeeID = 10,
+                    ResponsibleEmployeeID = CurrentSession.EmployeeID,
                     CurrentHolderID = cbHolder.SelectedValue as int?
                 };
 

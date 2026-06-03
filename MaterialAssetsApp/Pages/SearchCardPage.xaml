@@ -76,7 +76,8 @@
                   x:Name="dgCards"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
-                  SelectionMode="Single"
+                  SelectionMode="Extended"
+                  SelectionUnit="FullRow"
                   MouseDoubleClick="dgCards_MouseDoubleClick">
 
             <DataGrid.Columns>

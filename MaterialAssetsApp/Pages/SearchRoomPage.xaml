@@ -52,7 +52,8 @@
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
                   MouseDoubleClick="dgRooms_MouseDoubleClick"
-                  SelectionMode="Single">
+                  SelectionMode="Extended"
+                  SelectionUnit="FullRow">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding RoomID}" Width="60"/>

@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace MaterialAssetsApp
 {
@@ -7,9 +9,8 @@ namespace MaterialAssetsApp
         public MainWindow()
         {
             InitializeComponent();
+            LoadCurrentEmployee();
 
-            // Можно загрузить стартовую страницу, например, пустую или "Главная"
-            // MainFrame.Navigate(new Pages.HomePage());
         }
 
         private void BtnCreateCard_Click(object sender, RoutedEventArgs e)
@@ -65,6 +66,25 @@ namespace MaterialAssetsApp
         private void BtnSearchDepartment_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new Pages.SearchDepartmentPage());
+        }
+
+        private void LoadCurrentEmployee()
+        {
+            var context = new MaterialAssetsEntities();
+            cbCurrentEmployee.ItemsSource = context.Employees
+                .OrderBy(e => e.LastName)
+                .Select(e => new
+                {
+                    e.EmployeeID,
+                    FullName = e.LastName + " " + e.FirstName
+                })
+                .ToList();
+        }
+
+        private void cbCurrentEmployee_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbCurrentEmployee.SelectedValue == null) return;
+            CurrentSession.EmployeeID = (int)cbCurrentEmployee.SelectedValue;
         }
     }
 }

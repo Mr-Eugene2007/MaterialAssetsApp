@@ -20,6 +20,8 @@
                   Grid.Row="1"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
+                  SelectionMode="Extended"
+                  SelectionUnit="FullRow"
                   MouseDoubleClick="dgMovements_MouseDoubleClick">
 
             <DataGrid.Columns>
