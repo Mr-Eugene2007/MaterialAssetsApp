@@ -27,19 +27,40 @@ namespace MaterialAssetsApp.Pages
 
         private void LoadParentDepartments()
         {
-            cbParentDepartment.ItemsSource = _context.Departments
+            var list = _context.Departments
                 .OrderBy(d => d.DepartmentName)
                 .ToList();
+
+            var items = new System.Collections.Generic.List<DepartmentItem>();
+            items.Add(new DepartmentItem { DepartmentID = null, DepartmentName = "— Нет —" });
+            items.AddRange(list.Select(d => new DepartmentItem
+            {
+                DepartmentID = d.DepartmentID,
+                DepartmentName = d.DepartmentName
+            }));
+
+            cbParentDepartment.ItemsSource = items;
+            cbParentDepartment.SelectedIndex = 0;
+        }
+
+        // Вспомогательный класс — добавьте в конец файла внутри класса AddDepartmentPage
+        private class DepartmentItem
+        {
+            public int? DepartmentID { get; set; }
+            public string DepartmentName { get; set; }
         }
 
         private void dgDepartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _selectedDepartment = dgDepartments.SelectedItem as Department;
-
             if (_selectedDepartment != null)
             {
                 txtDepartmentName.Text = _selectedDepartment.DepartmentName;
-                cbParentDepartment.SelectedValue = _selectedDepartment.ParentID;
+
+                if (_selectedDepartment.ParentID == null)
+                    cbParentDepartment.SelectedIndex = 0;
+                else
+                    cbParentDepartment.SelectedValue = _selectedDepartment.ParentID;
             }
         }
 
@@ -95,6 +116,24 @@ namespace MaterialAssetsApp.Pages
                 return;
             }
 
+            // Проверяем наличие кабинетов
+            bool hasRooms = _context.Rooms.Any(r => r.DepartmentID == _selectedDepartment.DepartmentID);
+            if (hasRooms)
+            {
+                MessageBox.Show("Невозможно удалить подразделение: в нём есть кабинеты.\nСначала удалите или перенесите все кабинеты.",
+                    "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            // Проверяем наличие дочерних подразделений
+            bool hasChildren = _context.Departments.Any(d => d.ParentID == _selectedDepartment.DepartmentID);
+            if (hasChildren)
+            {
+                MessageBox.Show("Невозможно удалить подразделение: оно является родительским для других подразделений.\nСначала удалите или перенесите дочерние подразделения.",
+                    "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             if (MessageBox.Show("Удалить выбранное подразделение?",
                                 "Подтверждение",
                                 MessageBoxButton.YesNo,
@@ -105,10 +144,9 @@ namespace MaterialAssetsApp.Pages
             _context.SaveChanges();
 
             LoadDepartments();
-
+            LoadParentDepartments();
             txtDepartmentName.Clear();
-            cbParentDepartment.SelectedIndex = -1;
-
+            cbParentDepartment.SelectedIndex = 0;
             _selectedDepartment = null;
 
             MessageBox.Show("Подразделение удалено.");

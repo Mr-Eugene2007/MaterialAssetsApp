@@ -42,6 +42,11 @@ namespace MaterialAssetsApp.Pages
             cbCondition.ItemsSource = _context.AssetConditions
                 .OrderBy(c => c.ConditionName)
                 .ToList();
+
+            // Автоподстановка текущего держателя в поле "Передал"
+            var card = _context.AccountingCards.FirstOrDefault(c => c.CardID == _cardId);
+            if (card != null)
+                cbTransferredBy.SelectedValue = card.CurrentHolderID;
         }
 
         private void cbDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -71,13 +76,11 @@ namespace MaterialAssetsApp.Pages
                 return;
             }
 
-            // Находим следующий SequenceNumber
             int nextSeq = 1;
             var last = _context.AssetMovements
                 .Where(m => m.CardID == _cardId)
                 .OrderByDescending(m => m.SequenceNumber)
                 .FirstOrDefault();
-
             if (last != null)
                 nextSeq = last.SequenceNumber + 1;
 
@@ -97,8 +100,18 @@ namespace MaterialAssetsApp.Pages
             };
 
             _context.AssetMovements.Add(movement);
-            _context.SaveChanges();
 
+            // Обновляем карточку
+            var card = _context.AccountingCards.FirstOrDefault(c => c.CardID == _cardId);
+            if (card != null)
+            {
+                card.DepartmentID = movement.DepartmentID;
+                card.RoomID = movement.RoomID;
+                card.CurrentHolderID = movement.HolderEmployeeID;
+                card.ConditionID = movement.ConditionID;
+            }
+
+            _context.SaveChanges();
             MessageBox.Show("Запись добавлена.");
 
             ((MainWindow)Application.Current.MainWindow)

@@ -81,41 +81,49 @@ namespace MaterialAssetsApp.Pages
                 return;
             }
 
+            string snils = txtSNILS.Text.Trim();
+
             // Редактирование
             if (_selectedEmployee != null)
             {
+                bool exists = _context.Employees.Any(emp => emp.SNILS == snils && emp.EmployeeID != _selectedEmployee.EmployeeID);
+                if (exists)
+                {
+                    MessageBox.Show("Сотрудник с таким СНИЛС уже существует.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
                 _selectedEmployee.LastName = txtLastName.Text.Trim();
                 _selectedEmployee.FirstName = txtFirstName.Text.Trim();
                 _selectedEmployee.MiddleName = txtMiddleName.Text.Trim();
-
                 _selectedEmployee.BirthDate = dpBirthDate.SelectedDate.Value;
-                _selectedEmployee.SNILS = txtSNILS.Text.Trim();
-
+                _selectedEmployee.SNILS = snils;
                 _selectedEmployee.PhoneMobile = txtPhoneMobile.Text.Trim();
                 _selectedEmployee.Email = txtEmail.Text.Trim();
-
                 _selectedEmployee.HireDate = dpHireDate.SelectedDate.Value;
-
                 _context.SaveChanges();
                 LoadEmployees();
-
                 MessageBox.Show("Сотрудник обновлён.");
                 return;
             }
 
             // Добавление
+            bool snilsExists = _context.Employees.Any(emp => emp.SNILS == snils);
+            if (snilsExists)
+            {
+                MessageBox.Show("Сотрудник с таким СНИЛС уже существует.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             var employee = new Employee
             {
                 LastName = txtLastName.Text.Trim(),
                 FirstName = txtFirstName.Text.Trim(),
                 MiddleName = string.IsNullOrWhiteSpace(txtMiddleName.Text) ? null : txtMiddleName.Text.Trim(),
-
                 BirthDate = dpBirthDate.SelectedDate.Value,
-                SNILS = txtSNILS.Text.Trim(),
-
+                SNILS = snils,
                 PhoneMobile = string.IsNullOrWhiteSpace(txtPhoneMobile.Text) ? null : txtPhoneMobile.Text.Trim(),
                 Email = string.IsNullOrWhiteSpace(txtEmail.Text) ? null : txtEmail.Text.Trim(),
-
                 HireDate = dpHireDate.SelectedDate.Value,
                 IsActive = true,
                 PassportID = 1
@@ -123,7 +131,6 @@ namespace MaterialAssetsApp.Pages
 
             _context.Employees.Add(employee);
             _context.SaveChanges();
-
             LoadEmployees();
             MessageBox.Show("Сотрудник добавлен.");
         }

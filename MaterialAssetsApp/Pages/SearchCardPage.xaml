@@ -10,94 +10,80 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Поиск учетной карточки"
+        <!-- Заголовок -->
+        <TextBlock Grid.Row="0"
+                   Text="Поиск учетной карточки"
                    FontSize="20"
                    FontWeight="Bold"
                    Margin="0,0,0,10"/>
 
         <!-- Фильтры -->
-        <Grid Grid.Row="1" Margin="0,0,0,10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <!-- Инвентарный номер -->
-            <StackPanel Grid.Column="0" Margin="0,0,10,0">
-                <TextBlock Text="Инвентарный номер"/>
-                <TextBox x:Name="txtInvNumber"/>
+        <WrapPanel Grid.Row="1" Margin="0,0,0,10">
+            <StackPanel Margin="0,0,10,8">
+                <TextBlock Text="Инвентарный номер" Margin="0,0,0,3"/>
+                <TextBox x:Name="txtInvNumber" Width="160"/>
             </StackPanel>
 
-            <!-- Название ТС -->
-            <StackPanel Grid.Column="1" Margin="0,0,10,0">
-                <TextBlock Text="Название ТС"/>
-                <TextBox x:Name="txtAssetName"/>
+            <StackPanel Margin="0,0,10,8">
+                <TextBlock Text="Название ТС" Margin="0,0,0,3"/>
+                <TextBox x:Name="txtAssetName" Width="160"/>
             </StackPanel>
 
-            <!-- Тип -->
-            <StackPanel Grid.Column="2" Margin="0,0,10,0">
-                <TextBlock Text="Тип"/>
+            <StackPanel Margin="0,0,10,8">
+                <TextBlock Text="Тип" Margin="0,0,0,3"/>
                 <ComboBox x:Name="cbType"
+                          Width="160"
                           DisplayMemberPath="TypeName"
                           SelectedValuePath="AssetTypeID"/>
             </StackPanel>
 
-            <!-- Модель -->
-            <StackPanel Grid.Column="3" Margin="0,0,10,0">
-                <TextBlock Text="Модель"/>
+            <StackPanel Margin="0,0,10,8">
+                <TextBlock Text="Модель" Margin="0,0,0,3"/>
                 <ComboBox x:Name="cbModel"
+                          Width="160"
                           DisplayMemberPath="ModelName"
                           SelectedValuePath="ModelID"/>
             </StackPanel>
 
-            <!-- Подразделение -->
-            <StackPanel Grid.Column="4" Margin="0,0,10,0">
-                <TextBlock Text="Подразделение"/>
+            <StackPanel Margin="0,0,10,8">
+                <TextBlock Text="Подразделение" Margin="0,0,0,3"/>
                 <ComboBox x:Name="cbDepartment"
+                          Width="180"
                           DisplayMemberPath="DepartmentName"
                           SelectedValuePath="DepartmentID"/>
             </StackPanel>
 
-            <!-- Кнопка -->
-            <StackPanel Grid.Column="5" VerticalAlignment="Bottom" Orientation="Horizontal">
+            <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Margin="0,0,0,8">
                 <Button Content="Поиск"
-            Width="120"
-            Height="30"
-            Margin="0,0,10,0"
-            Click="BtnSearch_Click"/>
+                        Width="110" Height="32"
+                        Margin="0,0,10,0"
+                        Click="BtnSearch_Click"/>
                 <Button Content="Сбросить"
-            Width="120"
-            Height="30"
-            Click="BtnReset_Click"/>
+                        Width="110" Height="32"
+                        Click="BtnReset_Click"/>
             </StackPanel>
-        </Grid>
+        </WrapPanel>
 
         <!-- Результаты -->
         <DataGrid Grid.Row="2"
                   x:Name="dgCards"
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
+                  CanUserAddRows="False"
                   SelectionMode="Extended"
                   SelectionUnit="FullRow"
                   MouseDoubleClick="dgCards_MouseDoubleClick">
-
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding CardID}" Width="60"/>
-                <DataGridTextColumn Header="Инв. №" Binding="{Binding InventoryNumber}" Width="120"/>
-                <DataGridTextColumn Header="Название" Binding="{Binding AssetName}" Width="200"/>
-                <DataGridTextColumn Header="Тип" Binding="{Binding AssetType}" Width="150"/>
-                <DataGridTextColumn Header="Модель" Binding="{Binding ModelName}" Width="150"/>
-                <DataGridTextColumn Header="Подразделение" Binding="{Binding CurrentDepartment}" Width="200"/>
-                <DataGridTextColumn Header="Кабинет" Binding="{Binding CurrentRoom}" Width="100"/>
-                <DataGridTextColumn Header="Ответственный" Binding="{Binding ResponsiblePerson}" Width="200"/>
-                <DataGridTextColumn Header="Держатель" Binding="{Binding CurrentHolder}" Width="200"/>
-                <DataGridTextColumn Header="Состояние" Binding="{Binding CurrentCondition}" Width="150"/>
+                <DataGridTextColumn Header="Инв. №" Binding="{Binding InventoryNumber}" Width="110"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding AssetName}" Width="180"/>
+                <DataGridTextColumn Header="Тип" Binding="{Binding AssetType}" Width="130"/>
+                <DataGridTextColumn Header="Модель" Binding="{Binding ModelName}" Width="130"/>
+                <DataGridTextColumn Header="Подразделение" Binding="{Binding CurrentDepartment}" Width="170"/>
+                <DataGridTextColumn Header="Кабинет" Binding="{Binding CurrentRoom}" Width="90"/>
+                <DataGridTextColumn Header="Ответственный" Binding="{Binding ResponsiblePerson}" Width="170"/>
+                <DataGridTextColumn Header="Держатель" Binding="{Binding CurrentHolder}" Width="170"/>
+                <DataGridTextColumn Header="Состояние" Binding="{Binding CurrentCondition}" Width="*"/>
             </DataGrid.Columns>
-
         </DataGrid>
     </Grid>
 </Page>

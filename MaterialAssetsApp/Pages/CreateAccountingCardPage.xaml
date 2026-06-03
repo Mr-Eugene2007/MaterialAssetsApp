@@ -3,30 +3,32 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Создать учетную карточку">
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid Margin="10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <!-- Заголовок -->
-                <RowDefinition Height="Auto"/>
-                <!-- Основные поля -->
-                <RowDefinition Height="*"/>
-                <!-- Комплектующие + кнопки -->
-            </Grid.RowDefinitions>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="420"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-            <!-- Заголовок -->
-            <TextBlock Text="Создание учетной карточки"
-                       FontSize="20"
-                       FontWeight="Bold"
-                       Margin="0,0,0,10"/>
+        <!-- Заголовок -->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2"
+                   Text="Создание учетной карточки"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   Margin="0,0,0,10"/>
 
-            <!-- Основные поля -->
-            <Grid Grid.Row="1">
+        <!-- Левая колонка — основные поля -->
+        <ScrollViewer Grid.Row="1" Grid.Column="0"
+                      VerticalScrollBarVisibility="Auto"
+                      Margin="0,0,10,0">
+            <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -41,111 +43,96 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <!-- Модель -->
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Модель:" Margin="0,0,5,5"/>
-                <ComboBox Grid.Row="0" Grid.Column="1"
-                          x:Name="cbModel"
-                          DisplayMemberPath="ModelName"
-                          SelectedValuePath="ModelID"
-                          Margin="0,0,0,5"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Модель:" VerticalAlignment="Center" Margin="0,0,5,8"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" x:Name="cbModel"
+                          DisplayMemberPath="ModelName" SelectedValuePath="ModelID" Margin="0,0,0,8"/>
 
-                <!-- Название ТС -->
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="Название ТС:" Margin="0,0,5,5"/>
-                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtAssetName" Margin="0,0,0,5"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Название ТС:" VerticalAlignment="Center" Margin="0,0,5,8"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtAssetName" Margin="0,0,0,8"/>
 
-                <!-- Инвентарный номер -->
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Инвентарный номер:" Margin="0,0,5,5"/>
-                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtInventoryNumber" Margin="0,0,0,5"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Инвентарный номер:" VerticalAlignment="Center" Margin="0,0,5,8" TextWrapping="Wrap"/>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtInventoryNumber" Margin="0,0,0,8"/>
 
-                <!-- Серийный номер -->
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="Серийный номер:" Margin="0,0,5,5"/>
-                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtSerialNumber" Margin="0,0,0,5"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Серийный номер:" VerticalAlignment="Center" Margin="0,0,5,8"/>
+                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtSerialNumber" Margin="0,0,0,8"/>
 
-                <!-- Дата выпуска -->
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="Дата выпуска:" Margin="0,0,5,5"/>
-                <DatePicker Grid.Row="4" Grid.Column="1" x:Name="dpManufactureDate" Margin="0,0,0,5"/>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Дата выпуска:" VerticalAlignment="Center" Margin="0,0,5,8"/>
+                <DatePicker Grid.Row="4" Grid.Column="1" x:Name="dpManufactureDate" Margin="0,0,0,8"/>
 
-                <!-- Дата ввода -->
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="Дата ввода в эксплуатацию:" Margin="0,0,5,5"/>
-                <DatePicker Grid.Row="5" Grid.Column="1" x:Name="dpCommissionDate" Margin="0,0,0,5"/>
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Дата ввода в эксплуатацию:" VerticalAlignment="Center" Margin="0,0,5,8" TextWrapping="Wrap"/>
+                <DatePicker Grid.Row="5" Grid.Column="1" x:Name="dpCommissionDate" Margin="0,0,0,8"/>
 
-                <!-- Состояние -->
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="Состояние:" Margin="0,0,5,5"/>
-                <ComboBox Grid.Row="6" Grid.Column="1"
-                          x:Name="cbCondition"
-                          DisplayMemberPath="ConditionName"
-                          SelectedValuePath="ConditionID"
-                          Margin="0,0,0,5"/>
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Состояние:" VerticalAlignment="Center" Margin="0,0,5,8"/>
+                <ComboBox Grid.Row="6" Grid.Column="1" x:Name="cbCondition"
+                          DisplayMemberPath="ConditionName" SelectedValuePath="ConditionID" Margin="0,0,0,8"/>
 
-                <!-- Подразделение -->
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="Подразделение:" Margin="0,0,5,5"/>
-                <ComboBox Grid.Row="7" Grid.Column="1"
-                          x:Name="cbDepartment"
-                          DisplayMemberPath="DepartmentName"
-                          SelectedValuePath="DepartmentID"
-                          Margin="0,0,0,5"
-                          SelectionChanged="cbDepartment_SelectionChanged"/>
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="Подразделение:" VerticalAlignment="Center" Margin="0,0,5,8"/>
+                <ComboBox Grid.Row="7" Grid.Column="1" x:Name="cbDepartment"
+                          DisplayMemberPath="DepartmentName" SelectedValuePath="DepartmentID"
+                          SelectionChanged="cbDepartment_SelectionChanged" Margin="0,0,0,8"/>
 
-                <!-- Кабинет -->
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="Кабинет:" Margin="0,0,5,5"/>
-                <ComboBox Grid.Row="8" Grid.Column="1"
-                          x:Name="cbRoom"
-                          DisplayMemberPath="RoomNumber"
-                          SelectedValuePath="RoomID"
-                          Margin="0,0,0,5"/>
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="Кабинет:" VerticalAlignment="Center" Margin="0,0,5,8"/>
+                <ComboBox Grid.Row="8" Grid.Column="1" x:Name="cbRoom"
+                          DisplayMemberPath="RoomNumber" SelectedValuePath="RoomID" Margin="0,0,0,8"/>
 
-                <!-- Ответственный -->
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="Ответственный:" Margin="0,0,5,5"/>
-                <ComboBox Grid.Row="9" Grid.Column="1"
-                          x:Name="cbResponsible"
-                          DisplayMemberPath="FullName"
-                          SelectedValuePath="EmployeeID"
-                          Margin="0,0,0,5"/>
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="Ответственный:" VerticalAlignment="Center" Margin="0,0,5,8"/>
+                <ComboBox Grid.Row="9" Grid.Column="1" x:Name="cbResponsible"
+                          DisplayMemberPath="FullName" SelectedValuePath="EmployeeID" Margin="0,0,0,8"/>
 
-                <!-- Текущий держатель -->
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="Текущий держатель:" Margin="0,0,5,5"/>
-                <ComboBox Grid.Row="10" Grid.Column="1"
-                          x:Name="cbHolder"
-                          DisplayMemberPath="FullName"
-                          SelectedValuePath="EmployeeID"
-                          Margin="0,0,0,5"/>
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="Текущий держатель:" VerticalAlignment="Center" Margin="0,0,5,8"/>
+                <ComboBox Grid.Row="10" Grid.Column="1" x:Name="cbHolder"
+                          DisplayMemberPath="FullName" SelectedValuePath="EmployeeID" Margin="0,0,0,8"/>
             </Grid>
+        </ScrollViewer>
 
-            <!-- Комплектующие -->
-            <GroupBox Header="Комплектующие" Grid.Row="2" Margin="0,20,0,10">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+        <!-- Правая колонка — комплектующие + кнопки -->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-                    <DataGrid x:Name="dgComponents"
-                              AutoGenerateColumns="False"
-                              IsReadOnly="True"
-                              Grid.Row="0"
-                              Margin="0,0,0,10">
-
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Название" Binding="{Binding ComponentName}" Width="200"/>
-                            <DataGridTextColumn Header="Номер" Binding="{Binding ComponentNumber}" Width="150"/>
-                            <DataGridTextColumn Header="Кол-во" Binding="{Binding Quantity}" Width="80"/>
-                            <DataGridTextColumn Header="Примечание" Binding="{Binding Notes}" Width="200"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
-
-                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                        <Button Content="Добавить" Width="120" Margin="0,0,10,0" Click="BtnAddComponent_Click"/>
-                        <Button Content="Удалить" Width="120" Click="BtnDeleteComponent_Click"/>
-                    </StackPanel>
-
-                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
-                        <Button Content="Сохранить" Width="120" Margin="0,0,10,0" Click="BtnSave_Click"/>
-                        <Button Content="Очистить" Width="120" Click="BtnClear_Click"/>
-                    </StackPanel>
-                </Grid>
+            <GroupBox Grid.Row="0" Header="Комплектующие">
+                <DataGrid x:Name="dgComponents"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Название" Binding="{Binding ComponentName}" Width="*"/>
+                        <DataGridTextColumn Header="Номер" Binding="{Binding ComponentNumber}" Width="130"/>
+                        <DataGridTextColumn Header="Кол-во" Binding="{Binding Quantity}" Width="70"/>
+                        <DataGridTextColumn Header="Примечание" Binding="{Binding Notes}" Width="160"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </GroupBox>
 
+            <!-- Кнопки комплектующих -->
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Margin="0,8,0,8">
+                <Button Content="Добавить компонент"
+                        Width="160" Height="32"
+                        Margin="0,0,10,0"
+                        Click="BtnAddComponent_Click"/>
+                <Button Content="Удалить компонент"
+                        Width="160" Height="32"
+                        Click="BtnDeleteComponent_Click"/>
+            </StackPanel>
+
+            <!-- Кнопки сохранения -->
+            <StackPanel Grid.Row="2"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Button Content="Сохранить"
+                        Width="120" Height="32"
+                        Margin="0,0,10,0"
+                        Click="BtnSave_Click"/>
+                <Button Content="Очистить"
+                        Width="120" Height="32"
+                        Click="BtnClear_Click"/>
+            </StackPanel>
         </Grid>
-    </ScrollViewer>
+    </Grid>
 </Page>

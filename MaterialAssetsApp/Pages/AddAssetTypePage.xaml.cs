@@ -83,6 +83,15 @@ namespace MaterialAssetsApp.Pages
                 return;
             }
 
+            // Проверяем наличие моделей этого типа
+            bool hasModels = _context.AssetModels.Any(m => m.AssetTypeID == _selectedType.AssetTypeID);
+            if (hasModels)
+            {
+                MessageBox.Show("Невозможно удалить тип: к нему привязаны модели.\nСначала удалите или перенесите все модели этого типа.",
+                    "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             if (MessageBox.Show("Удалить выбранный тип?",
                                 "Подтверждение",
                                 MessageBoxButton.YesNo,
@@ -93,7 +102,6 @@ namespace MaterialAssetsApp.Pages
             _context.SaveChanges();
 
             LoadTypes();
-
             txtTypeName.Clear();
             _selectedType = null;
 

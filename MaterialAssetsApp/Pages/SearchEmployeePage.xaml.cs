@@ -123,5 +123,41 @@ namespace MaterialAssetsApp.Pages
             LoadAllEmployees();
         }
 
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgEmployees.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите сотрудника для удаления.");
+                return;
+            }
+
+            dynamic row = dgEmployees.SelectedItem;
+            int employeeId = row.EmployeeID;
+
+            // Проверяем наличие карточек
+            bool hasCards = _context.AccountingCards.Any(c => c.CurrentHolderID == employeeId);
+            if (hasCards)
+            {
+                MessageBox.Show("Невозможно удалить сотрудника: за ним закреплены учётные карточки.\nСначала перенесите карточки другому сотруднику.",
+                    "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (MessageBox.Show("Удалить выбранного сотрудника?",
+                                "Подтверждение",
+                                MessageBoxButton.YesNo,
+                                MessageBoxImage.Question) != MessageBoxResult.Yes)
+                return;
+
+            var employee = _context.Employees.Find(employeeId);
+            if (employee == null) return;
+
+            _context.Employees.Remove(employee);
+            _context.SaveChanges();
+
+            LoadAllEmployees();
+            MessageBox.Show("Сотрудник удалён.");
+        }
+
     }
 }

@@ -153,27 +153,57 @@ namespace MaterialAssetsApp.Pages
             if (_card == null)
                 return;
 
+            int? newHolderId = cbHolder.SelectedValue as int?;
+            int? newDepId = cbDepartment.SelectedValue as int?;
+            int? newRoomId = cbRoom.SelectedValue as int?;
+            int? newConditionId = cbCondition.SelectedValue as int?;
+
+            bool holderChanged = newHolderId != _card.CurrentHolderID;
+            bool depChanged = newDepId != (int?)_card.DepartmentID;
+            bool roomChanged = newRoomId != _card.RoomID;
+            bool conditionChanged = newConditionId != (int?)_card.ConditionID;
+
             _card.ModelID = (int)cbModel.SelectedValue;
             _card.AssetName = txtAssetName.Text.Trim();
             _card.InventoryNumber = txtInventoryNumber.Text.Trim();
             _card.SerialNumber = txtSerialNumber.Text.Trim();
             _card.ManufactureDate = dpManufactureDate.SelectedDate;
             _card.CommissionDate = dpCommissionDate.SelectedDate;
+            _card.DecommissionDate = dpDecommissionDate.SelectedDate;
+            _card.ConditionID = newConditionId ?? _card.ConditionID;
+            _card.DepartmentID = newDepId ?? _card.DepartmentID;
+            _card.RoomID = newRoomId;
+            _card.ResponsibleEmployeeID = CurrentSession.EmployeeID;
+            _card.CurrentHolderID = newHolderId;
 
-            _card.DecommissionDate = dpDecommissionDate.SelectedDate;  
+            // Если изменились держатель, подразделение, кабинет или состояние — создаём запись перемещения
+            if (holderChanged || depChanged || roomChanged || conditionChanged)
+            {
+                int nextSeq = _context.AssetMovements
+                    .Where(m => m.CardID == _card.CardID)
+                    .Select(m => (int?)m.SequenceNumber)
+                    .Max() ?? 0;
+                nextSeq++;
 
-            _card.ConditionID = (int)cbCondition.SelectedValue;
-            _card.DepartmentID = (int)cbDepartment.SelectedValue;
-            _card.RoomID = cbRoom.SelectedValue as int?;
-            _card.ResponsibleEmployeeID = 10;
-            _card.CurrentHolderID = cbHolder.SelectedValue as int?;
+                var movement = new AssetMovement
+                {
+                    CardID = _card.CardID,
+                    SequenceNumber = nextSeq,
+                    MovementDate = DateTime.Now,
+                    DepartmentID = _card.DepartmentID,
+                    RoomID = _card.RoomID,
+                    HolderEmployeeID = newHolderId ?? _card.CurrentHolderID ?? 0,
+                    TransferredByID = CurrentSession.EmployeeID,
+                    ConditionID = _card.ConditionID,
+                    Notes = "Изменение карточки"
+                };
+
+                _context.AssetMovements.Add(movement);
+            }
 
             _context.SaveChanges();
 
-            MessageBox.Show("Изменения сохранены.",
-                            "Успех",
-                            MessageBoxButton.OK,
-                            MessageBoxImage.Information);
+            MessageBox.Show("Изменения сохранены.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
 
             LoadComponents();
         }
@@ -251,13 +281,13 @@ namespace MaterialAssetsApp.Pages
                 Add("Серийный номер", _card.SerialNumber ?? "-");
 
                 Add("Ответственный",
-                    _card.Employee != null
-                        ? $"{_card.Employee.LastName} {_card.Employee.FirstName}"
-                        : "-");
+                _card.Employee != null
+                    ? $"{_card.Employee.LastName} {_card.Employee.FirstName} {_card.Employee.MiddleName}".Trim()
+                    : "-");
 
                 Add("Текущий держатель",
                     _card.Employee1 != null
-                        ? $"{_card.Employee1.LastName} {_card.Employee1.FirstName}"
+                        ? $"{_card.Employee1.LastName} {_card.Employee1.FirstName} {_card.Employee1.MiddleName}".Trim()
                         : "-");
 
                 Add("Дата выпуска", _card.ManufactureDate?.ToShortDateString() ?? "-");
@@ -317,9 +347,9 @@ namespace MaterialAssetsApp.Pages
                 table.Cell(1, 2).Range.Text = "Дата";
                 table.Cell(1, 3).Range.Text = "Подразделение";
                 table.Cell(1, 4).Range.Text = "Кабинет";
-                table.Cell(1, 5).Range.Text = "Подпись";      // исправлено
-                table.Cell(1, 6).Range.Text = "Держатель";    // исправлено
-                table.Cell(1, 7).Range.Text = "Состояние";
+                table.Cell(1, 5).Range.Text = "Получатель";
+                table.Cell(1, 6).Range.Text = "Кто передал";
+                table.Cell(1, 7).Range.Text = "Подпись";
 
                 int row = 2;
                 foreach (var m in movements)
@@ -329,17 +359,20 @@ namespace MaterialAssetsApp.Pages
                     table.Cell(row, 3).Range.Text = m.Department?.DepartmentName ?? "-";
                     table.Cell(row, 4).Range.Text = m.Room?.RoomNumber ?? "-";
 
-                    // Колонка 5 — Подпись (пустая)
-                    table.Cell(row, 5).Range.Text = "";
-
-                    // Колонка 6 — Держатель
-                    table.Cell(row, 6).Range.Text =
+                    // Получатель (держатель)
+                    table.Cell(row, 5).Range.Text =
                         m.Employee != null
-                            ? $"{m.Employee.LastName} {m.Employee.FirstName}"
+                            ? $"{m.Employee.LastName} {m.Employee.FirstName} {m.Employee.MiddleName}".Trim()
                             : "-";
 
-                    // Колонка 7 — Состояние
-                    table.Cell(row, 7).Range.Text = m.AssetCondition?.ConditionName ?? "-";
+                    // Кто передал
+                    table.Cell(row, 6).Range.Text =
+                        m.Employee1 != null
+                            ? $"{m.Employee1.LastName} {m.Employee1.FirstName} {m.Employee1.MiddleName}".Trim()
+                            : "-";
+
+                    // Подпись — пустая
+                    table.Cell(row, 7).Range.Text = "";
 
                     row++;
                 }
@@ -348,9 +381,14 @@ namespace MaterialAssetsApp.Pages
                 // СОХРАНЕНИЕ
                 // ───────────────────────────────────────────────
 
-                string path = Path.Combine(
-                    Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-                    $"Карточка_{_card.InventoryNumber}.docx");
+                string folder = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+                "Учётные карточки");
+
+                if (!Directory.Exists(folder))
+                    Directory.CreateDirectory(folder);
+
+                string path = Path.Combine(folder, $"Карточка_{_card.InventoryNumber}.docx");
 
                 doc.SaveAs2(path);
                 doc.Close();

@@ -20,9 +20,26 @@ namespace MaterialAssetsApp.Pages
 
         private void LoadTypes()
         {
-            cbType.ItemsSource = _context.AssetTypes
+            var list = _context.AssetTypes
                 .OrderBy(t => t.TypeName)
                 .ToList();
+
+            var items = new System.Collections.Generic.List<TypeItem>();
+            items.Add(new TypeItem { AssetTypeID = null, TypeName = "— Не выбрано —" });
+            items.AddRange(list.Select(t => new TypeItem
+            {
+                AssetTypeID = t.AssetTypeID,
+                TypeName = t.TypeName
+            }));
+
+            cbType.ItemsSource = items;
+            cbType.SelectedIndex = 0;
+        }
+
+        private class TypeItem
+        {
+            public int? AssetTypeID { get; set; }
+            public string TypeName { get; set; }
         }
 
         private void LoadModels()
@@ -56,17 +73,12 @@ namespace MaterialAssetsApp.Pages
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (cbType.SelectedValue == null)
+            if (cbType.SelectedValue == null || (cbType.SelectedValue as int?) == null)
             {
                 MessageBox.Show("Выберите тип.");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtBrand.Text))
-            {
-                MessageBox.Show("Введите бренд.");
-                return;
-            }
 
             if (string.IsNullOrWhiteSpace(txtModelName.Text))
             {

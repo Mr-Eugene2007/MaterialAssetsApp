@@ -2,67 +2,60 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Карточки">
-
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Заголовок -->
             <RowDefinition Height="Auto"/>
-            <!-- Кнопка -->
             <RowDefinition Height="*"/>
-            <!-- Таблица -->
             <RowDefinition Height="Auto"/>
-            <!-- Назад -->
         </Grid.RowDefinitions>
 
         <!-- Заголовок -->
-        <TextBlock x:Name="txtTitle"
-           FontSize="20"
-           FontWeight="Bold"
-           Margin="0,0,0,15"/>
+        <TextBlock Grid.Row="0"
+                   x:Name="txtTitle"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   Margin="0,0,0,10"/>
 
         <!-- Кнопки -->
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    Margin="0,0,0,10">
             <Button Content="Переместить выбранные"
-            Width="200"
-            Height="30"
-            Margin="0,0,10,0"
-            Click="BtnMoveSelected_Click"/>
+                    Width="180"
+                    Height="32"
+                    Margin="0,0,10,0"
+                    Click="BtnMoveSelected_Click"/>
         </StackPanel>
 
         <!-- Таблица карточек -->
-        <DataGrid x:Name="dgCards"
-          Grid.Row="2"
-          AutoGenerateColumns="False"
-          IsReadOnly="True"
-          CanUserAddRows="False"
-          SelectionMode="Extended"
-          SelectionUnit="FullRow"
-          MouseDoubleClick="dgCards_MouseDoubleClick">
-
-
+        <DataGrid Grid.Row="2"
+                  x:Name="dgCards"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserAddRows="False"
+                  SelectionMode="Extended"
+                  SelectionUnit="FullRow"
+                  MouseDoubleClick="dgCards_MouseDoubleClick">
             <DataGrid.Columns>
-
-
                 <DataGridTextColumn Header="Инв. №" Binding="{Binding InventoryNumber}" Width="100"/>
                 <DataGridTextColumn Header="Название" Binding="{Binding AssetName}" Width="200"/>
-                <DataGridTextColumn Header="Тип" Binding="{Binding TypeName}" Width="150"/>
-                <DataGridTextColumn Header="Модель" Binding="{Binding ModelName}" Width="150"/>
-                <DataGridTextColumn Header="Подразделение" Binding="{Binding DepartmentName}" Width="150"/>
-                <DataGridTextColumn Header="Кабинет" Binding="{Binding RoomNumber}" Width="100"/>
-                <DataGridTextColumn Header="Держатель" Binding="{Binding HolderName}" Width="200"/>
-                <DataGridTextColumn Header="Состояние" Binding="{Binding ConditionName}" Width="120"/>
-
+                <DataGridTextColumn Header="Тип" Binding="{Binding TypeName}" Width="130"/>
+                <DataGridTextColumn Header="Модель" Binding="{Binding ModelName}" Width="130"/>
+                <DataGridTextColumn Header="Подразделение" Binding="{Binding DepartmentName}" Width="160"/>
+                <DataGridTextColumn Header="Кабинет" Binding="{Binding RoomNumber}" Width="90"/>
+                <DataGridTextColumn Header="Держатель" Binding="{Binding HolderName}" Width="180"/>
+                <DataGridTextColumn Header="Состояние" Binding="{Binding ConditionName}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 
-        <!-- Назад -->
+        <!-- Нижняя панель -->
         <Button Grid.Row="3"
-        Content="Назад"
-        Width="120"
-        HorizontalAlignment="Right"
-        Click="BtnBack_Click"/>
-
-
+                Content="Назад"
+                Width="120"
+                Height="32"
+                HorizontalAlignment="Right"
+                Margin="0,10,0,0"
+                Click="BtnBack_Click"/>
     </Grid>
 </Page>
