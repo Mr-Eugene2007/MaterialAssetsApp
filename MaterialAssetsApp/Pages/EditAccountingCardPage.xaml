@@ -79,13 +79,33 @@
                 <ComboBox Grid.Row="9" Grid.Column="1" x:Name="cbRoom"
                           DisplayMemberPath="RoomNumber" SelectedValuePath="RoomID" Margin="0,0,0,8"/>
 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="Ответственный:" VerticalAlignment="Center" Margin="0,0,5,8"/>
-                <ComboBox Grid.Row="10" Grid.Column="1" x:Name="cbResponsible"
-                          DisplayMemberPath="FullName" SelectedValuePath="EmployeeID" Margin="0,0,0,8"/>
+                <!-- Ответственный -->
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="Ответственный:" VerticalAlignment="Top" Margin="0,0,5,8"/>
+                <StackPanel Grid.Row="10" Grid.Column="1" Margin="0,0,0,8">
+                    <TextBox x:Name="txtSearchResponsible"
+             Margin="0,0,0,3"
+             TextChanged="txtSearchResponsible_TextChanged"/>
+                    <ComboBox x:Name="cbResponsible"
+              IsEditable="False"
+              DisplayMemberPath="FullName"
+              SelectedValuePath="EmployeeID"
+              MaxDropDownHeight="200"
+              SelectionChanged="cbResponsible_SelectionChanged"/>
+                </StackPanel>
 
-                <TextBlock Grid.Row="11" Grid.Column="0" Text="Текущий держатель:" VerticalAlignment="Center" Margin="0,0,5,8"/>
-                <ComboBox Grid.Row="11" Grid.Column="1" x:Name="cbHolder"
-                          DisplayMemberPath="FullName" SelectedValuePath="EmployeeID" Margin="0,0,0,8"/>
+                <!-- Текущий держатель -->
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="Текущий держатель:" VerticalAlignment="Top" Margin="0,0,5,8" TextWrapping="Wrap"/>
+                <StackPanel Grid.Row="11" Grid.Column="1" Margin="0,0,0,8">
+                    <TextBox x:Name="txtSearchHolder"
+             Margin="0,0,0,3"
+             TextChanged="txtSearchHolder_TextChanged"/>
+                    <ComboBox x:Name="cbHolder"
+              IsEditable="False"
+              DisplayMemberPath="FullName"
+              SelectedValuePath="EmployeeID"
+              MaxDropDownHeight="200"
+              SelectionChanged="cbHolder_SelectionChanged"/>
+                </StackPanel>
             </Grid>
         </ScrollViewer>
 

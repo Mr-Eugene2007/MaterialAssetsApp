@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,6 +10,7 @@ namespace MaterialAssetsApp.Pages
     {
         private readonly MaterialAssetsEntities _context;
         private readonly int _cardId;
+        private List<dynamic> _allEmployees;
 
         public AddMovementPage(int cardId)
         {
@@ -26,18 +28,22 @@ namespace MaterialAssetsApp.Pages
                 .OrderBy(d => d.DepartmentName)
                 .ToList();
 
-            var employees = _context.Employees
+            _allEmployees = _context.Employees
                 .OrderBy(e => e.LastName)
                 .Select(e => new
                 {
                     e.EmployeeID,
                     FullName = e.LastName + " " + e.FirstName +
-                               (e.MiddleName != null ? " " + e.MiddleName : "")
+                               (e.MiddleName != null ? " " + e.MiddleName : "") +
+                               " (СНИЛС: " + e.SNILS + ")",
+                    e.SNILS
                 })
+                .ToList()
+                .Cast<dynamic>()
                 .ToList();
 
-            cbHolder.ItemsSource = employees;
-            cbTransferredBy.ItemsSource = employees;
+            cbHolder.ItemsSource = _allEmployees;
+            cbTransferredBy.ItemsSource = _allEmployees;
 
             cbCondition.ItemsSource = _context.AssetConditions
                 .OrderBy(c => c.ConditionName)
@@ -122,6 +128,32 @@ namespace MaterialAssetsApp.Pages
         {
             ((MainWindow)Application.Current.MainWindow)
                 .MainFrame.GoBack();
+        }
+
+        private void txtSearchHolder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FilterEmployees(txtSearchHolder.Text, cbHolder);
+        }
+
+        private void txtSearchTransferred_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FilterEmployees(txtSearchTransferred.Text, cbTransferredBy);
+        }
+
+        private void FilterEmployees(string search, ComboBox comboBox)
+        {
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                comboBox.ItemsSource = _allEmployees;
+                return;
+            }
+
+            string lower = search.ToLower();
+            comboBox.ItemsSource = _allEmployees
+                .Where(e => ((string)e.FullName).ToLower().Contains(lower))
+                .ToList();
+
+            comboBox.IsDropDownOpen = true;
         }
     }
 }

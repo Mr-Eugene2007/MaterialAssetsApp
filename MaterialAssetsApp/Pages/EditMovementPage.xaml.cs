@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,6 +12,7 @@ namespace MaterialAssetsApp.Pages
         private readonly int _movementId;
         private readonly int _cardId;
         private bool _isLoading = false;
+        private List<dynamic> _allEmployees;
 
         public EditMovementPage(int movementId, int cardId)
         {
@@ -30,22 +32,69 @@ namespace MaterialAssetsApp.Pages
                 .OrderBy(d => d.DepartmentName)
                 .ToList();
 
-            var employees = _context.Employees
+            _allEmployees = _context.Employees
                 .OrderBy(e => e.LastName)
                 .Select(e => new
                 {
                     e.EmployeeID,
                     FullName = e.LastName + " " + e.FirstName +
-                               (e.MiddleName != null ? " " + e.MiddleName : "")
+                               (e.MiddleName != null ? " " + e.MiddleName : "") +
+                               " (СНИЛС: " + e.SNILS + ")"
                 })
+                .ToList()
+                .Cast<dynamic>()
                 .ToList();
 
-            cbHolder.ItemsSource = employees;
-            cbTransferredBy.ItemsSource = employees;
+            cbHolder.ItemsSource = _allEmployees;
+            cbTransferredBy.ItemsSource = _allEmployees;
+        }
 
-            cbCondition.ItemsSource = _context.AssetConditions
-                .OrderBy(c => c.ConditionName)
+        private void txtSearchHolder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FilterEmployees(txtSearchHolder.Text, cbHolder);
+        }
+
+        private void txtSearchTransferred_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FilterEmployees(txtSearchTransferred.Text, cbTransferredBy);
+        }
+
+        private void cbHolder_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbHolder.SelectedValue != null)
+            {
+                txtSearchHolder.TextChanged -= txtSearchHolder_TextChanged;
+                txtSearchHolder.Clear();
+                txtSearchHolder.TextChanged += txtSearchHolder_TextChanged;
+                cbHolder.ItemsSource = _allEmployees;
+            }
+        }
+
+        private void cbTransferredBy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbTransferredBy.SelectedValue != null)
+            {
+                txtSearchTransferred.TextChanged -= txtSearchTransferred_TextChanged;
+                txtSearchTransferred.Clear();
+                txtSearchTransferred.TextChanged += txtSearchTransferred_TextChanged;
+                cbTransferredBy.ItemsSource = _allEmployees;
+            }
+        }
+
+        private void FilterEmployees(string search, ComboBox comboBox)
+        {
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                comboBox.ItemsSource = _allEmployees;
+                return;
+            }
+
+            string lower = search.ToLower();
+            comboBox.ItemsSource = _allEmployees
+                .Where(emp => ((string)emp.FullName).ToLower().Contains(lower))
                 .ToList();
+
+            comboBox.IsDropDownOpen = true;
         }
 
         // Загрузка записи

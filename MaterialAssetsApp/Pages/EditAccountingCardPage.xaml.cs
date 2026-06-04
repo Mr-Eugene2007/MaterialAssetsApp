@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -12,6 +13,7 @@ namespace MaterialAssetsApp.Pages
     {
         private readonly MaterialAssetsEntities _context;
         private AccountingCard _card;
+        private List<dynamic> _allEmployees;
 
         public EditAccountingCardPage(int cardId)
         {
@@ -37,18 +39,69 @@ namespace MaterialAssetsApp.Pages
                 .OrderBy(d => d.DepartmentName)
                 .ToList();
 
-            var employees = _context.Employees
+            _allEmployees = _context.Employees
+                .OrderBy(e => e.LastName)
                 .Select(e => new
                 {
                     e.EmployeeID,
                     FullName = e.LastName + " " + e.FirstName +
-                               (string.IsNullOrEmpty(e.MiddleName) ? "" : " " + e.MiddleName)
+                               (e.MiddleName != null ? " " + e.MiddleName : "") +
+                               " (СНИЛС: " + e.SNILS + ")"
                 })
-                .OrderBy(e => e.FullName)
+                .ToList()
+                .Cast<dynamic>()
                 .ToList();
 
-            cbResponsible.ItemsSource = employees;
-            cbHolder.ItemsSource = employees;
+            cbResponsible.ItemsSource = _allEmployees;
+            cbHolder.ItemsSource = _allEmployees;
+        }
+
+        private void txtSearchResponsible_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FilterEmployees(txtSearchResponsible.Text, cbResponsible);
+        }
+
+        private void txtSearchHolder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FilterEmployees(txtSearchHolder.Text, cbHolder);
+        }
+
+        private void cbResponsible_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbResponsible.SelectedValue != null)
+            {
+                txtSearchResponsible.TextChanged -= txtSearchResponsible_TextChanged;
+                txtSearchResponsible.Clear();
+                txtSearchResponsible.TextChanged += txtSearchResponsible_TextChanged;
+                cbResponsible.ItemsSource = _allEmployees;
+            }
+        }
+
+        private void cbHolder_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbHolder.SelectedValue != null)
+            {
+                txtSearchHolder.TextChanged -= txtSearchHolder_TextChanged;
+                txtSearchHolder.Clear();
+                txtSearchHolder.TextChanged += txtSearchHolder_TextChanged;
+                cbHolder.ItemsSource = _allEmployees;
+            }
+        }
+
+        private void FilterEmployees(string search, ComboBox comboBox)
+        {
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                comboBox.ItemsSource = _allEmployees;
+                return;
+            }
+
+            string lower = search.ToLower();
+            comboBox.ItemsSource = _allEmployees
+                .Where(emp => ((string)emp.FullName).ToLower().Contains(lower))
+                .ToList();
+
+            comboBox.IsDropDownOpen = true;
         }
 
         private void LoadCard(int id)
@@ -163,6 +216,9 @@ namespace MaterialAssetsApp.Pages
             bool roomChanged = newRoomId != _card.RoomID;
             bool conditionChanged = newConditionId != (int?)_card.ConditionID;
 
+            // Сохраняем старого держателя ДО изменений
+            int? oldHolderId = _card.CurrentHolderID;
+
             _card.ModelID = (int)cbModel.SelectedValue;
             _card.AssetName = txtAssetName.Text.Trim();
             _card.InventoryNumber = txtInventoryNumber.Text.Trim();
@@ -176,7 +232,6 @@ namespace MaterialAssetsApp.Pages
             _card.ResponsibleEmployeeID = CurrentSession.EmployeeID;
             _card.CurrentHolderID = newHolderId;
 
-            // Если изменились держатель, подразделение, кабинет или состояние — создаём запись перемещения
             if (holderChanged || depChanged || roomChanged || conditionChanged)
             {
                 int nextSeq = _context.AssetMovements
@@ -192,8 +247,8 @@ namespace MaterialAssetsApp.Pages
                     MovementDate = DateTime.Now,
                     DepartmentID = _card.DepartmentID,
                     RoomID = _card.RoomID,
-                    HolderEmployeeID = newHolderId ?? _card.CurrentHolderID ?? 0,
-                    TransferredByID = CurrentSession.EmployeeID,
+                    HolderEmployeeID = newHolderId ?? oldHolderId ?? 0, // используем oldHolderId
+                    TransferredByID = oldHolderId, // кто передал — старый держатель
                     ConditionID = _card.ConditionID,
                     Notes = "Изменение карточки"
                 };
@@ -204,7 +259,6 @@ namespace MaterialAssetsApp.Pages
             _context.SaveChanges();
 
             MessageBox.Show("Изменения сохранены.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
-
             LoadComponents();
         }
 

@@ -2,37 +2,40 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Перемещение выбранных">
-
     <StackPanel Margin="20" Width="400">
-
         <TextBlock Text="Перемещение выбранных карточек"
                    FontSize="20"
                    FontWeight="Bold"
-                   Margin="0 0 0 20"/>
+                   Margin="0,0,0,20"/>
 
         <TextBlock Text="Новый держатель:"/>
+        <TextBox x:Name="txtSearchEmployee"
+                 Margin="0,0,0,3"
+                 TextChanged="txtSearchEmployee_TextChanged"/>
         <ComboBox x:Name="cbEmployee"
+                  IsEditable="False"
                   DisplayMemberPath="FullName"
                   SelectedValuePath="EmployeeID"
-                  Margin="0 0 0 20"/>
+                  MaxDropDownHeight="200"
+                  Margin="0,0,0,20"
+                  SelectionChanged="cbEmployee_SelectionChanged"/>
 
         <TextBlock Text="Новое подразделение:"/>
         <ComboBox x:Name="cbDepartment"
-          DisplayMemberPath="DepartmentName"
-          SelectedValuePath="DepartmentID"
-          SelectionChanged="cbDepartment_SelectionChanged"
-          Margin="0 0 0 20"/>
+                  DisplayMemberPath="DepartmentName"
+                  SelectedValuePath="DepartmentID"
+                  SelectionChanged="cbDepartment_SelectionChanged"
+                  Margin="0,0,0,20"/>
 
         <TextBlock Text="Новый кабинет:"/>
         <ComboBox x:Name="cbRoom"
                   DisplayMemberPath="RoomNumber"
                   SelectedValuePath="RoomID"
-                  Margin="0 0 0 20"/>
+                  Margin="0,0,0,20"/>
 
         <Button Content="Переместить"
                 Width="200"
                 Height="40"
                 Click="BtnMove_Click"/>
-
     </StackPanel>
 </Page>

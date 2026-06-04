@@ -9,6 +9,7 @@ namespace MaterialAssetsApp.Pages
     {
         private readonly MaterialAssetsEntities _context;
         private readonly List<AssetComponent> _tempComponents = new List<AssetComponent>();
+        private List<dynamic> _allEmployees;
 
         public CreateAccountingCardPage()
         {
@@ -39,20 +40,71 @@ namespace MaterialAssetsApp.Pages
 
         private void LoadEmployees()
         {
-            var employees = _context.Employees
+            _allEmployees = _context.Employees
                 .OrderBy(e => e.LastName)
                 .Select(e => new
                 {
                     e.EmployeeID,
                     FullName = e.LastName + " " + e.FirstName +
-                               (string.IsNullOrEmpty(e.MiddleName) ? "" : " " + e.MiddleName)
+                               (e.MiddleName != null ? " " + e.MiddleName : "") +
+                               " (СНИЛС: " + e.SNILS + ")"
                 })
+                .ToList()
+                .Cast<dynamic>()
                 .ToList();
 
-            cbResponsible.ItemsSource = employees;
-            cbHolder.ItemsSource = employees;
+            cbResponsible.ItemsSource = _allEmployees;
+            cbHolder.ItemsSource = _allEmployees;
 
-            cbResponsible.SelectedValue = CurrentSession.EmployeeID; //автоматические подставление отвественного
+            cbResponsible.SelectedValue = CurrentSession.EmployeeID;
+        }
+
+        private void txtSearchResponsible_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FilterEmployees(txtSearchResponsible.Text, cbResponsible);
+        }
+
+        private void txtSearchHolder_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FilterEmployees(txtSearchHolder.Text, cbHolder);
+        }
+
+        private void cbResponsible_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbResponsible.SelectedValue != null)
+            {
+                txtSearchResponsible.TextChanged -= txtSearchResponsible_TextChanged;
+                txtSearchResponsible.Clear();
+                txtSearchResponsible.TextChanged += txtSearchResponsible_TextChanged;
+                cbResponsible.ItemsSource = _allEmployees;
+            }
+        }
+
+        private void cbHolder_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbHolder.SelectedValue != null)
+            {
+                txtSearchHolder.TextChanged -= txtSearchHolder_TextChanged;
+                txtSearchHolder.Clear();
+                txtSearchHolder.TextChanged += txtSearchHolder_TextChanged;
+                cbHolder.ItemsSource = _allEmployees;
+            }
+        }
+
+        private void FilterEmployees(string search, ComboBox comboBox)
+        {
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                comboBox.ItemsSource = _allEmployees;
+                return;
+            }
+
+            string lower = search.ToLower();
+            comboBox.ItemsSource = _allEmployees
+                .Where(emp => ((string)emp.FullName).ToLower().Contains(lower))
+                .ToList();
+
+            comboBox.IsDropDownOpen = true;
         }
 
         private void cbDepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)

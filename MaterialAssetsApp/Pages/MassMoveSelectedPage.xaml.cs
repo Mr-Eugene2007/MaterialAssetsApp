@@ -10,6 +10,7 @@ namespace MaterialAssetsApp.Pages
     {
         private readonly MaterialAssetsEntities _context;
         private readonly List<int> _cardIds;
+        private List<dynamic> _allEmployees;
 
 
         public MassMoveSelectedPage(List<int> cardIds)
@@ -24,14 +25,20 @@ namespace MaterialAssetsApp.Pages
 
         private void LoadEmployees()
         {
-            cbEmployee.ItemsSource = _context.Employees
+            _allEmployees = _context.Employees
+                .OrderBy(e => e.LastName)
                 .Select(e => new
                 {
                     e.EmployeeID,
-                    FullName = e.LastName + " " + e.FirstName
+                    FullName = e.LastName + " " + e.FirstName +
+                               (e.MiddleName != null ? " " + e.MiddleName : "") +
+                               " (СНИЛС: " + e.SNILS + ")"
                 })
-                .OrderBy(e => e.FullName)
+                .ToList()
+                .Cast<dynamic>()
                 .ToList();
+
+            cbEmployee.ItemsSource = _allEmployees;
         }
 
         private void LoadDepartments()
@@ -111,6 +118,33 @@ namespace MaterialAssetsApp.Pages
 
             MessageBox.Show("Перемещение выполнено.",
                 "Готово", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void txtSearchEmployee_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSearchEmployee.Text))
+            {
+                cbEmployee.ItemsSource = _allEmployees;
+                return;
+            }
+
+            string lower = txtSearchEmployee.Text.ToLower();
+            cbEmployee.ItemsSource = _allEmployees
+                .Where(emp => ((string)emp.FullName).ToLower().Contains(lower))
+                .ToList();
+
+            cbEmployee.IsDropDownOpen = true;
+        }
+
+        private void cbEmployee_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbEmployee.SelectedValue != null)
+            {
+                txtSearchEmployee.TextChanged -= txtSearchEmployee_TextChanged;
+                txtSearchEmployee.Clear();
+                txtSearchEmployee.TextChanged += txtSearchEmployee_TextChanged;
+                cbEmployee.ItemsSource = _allEmployees;
+            }
         }
 
     }

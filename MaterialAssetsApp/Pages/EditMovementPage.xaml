@@ -66,20 +66,32 @@
                           Margin="0,0,0,10"/>
 
                 <!-- Держатель -->
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="Держатель:" Margin="0,0,5,10"/>
-                <ComboBox Grid.Row="3" Grid.Column="1"
-                          x:Name="cbHolder"
-                          DisplayMemberPath="FullName"
-                          SelectedValuePath="EmployeeID"
-                          Margin="0,0,0,10"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Держатель:" Margin="0,0,5,10" VerticalAlignment="Top"/>
+                <StackPanel Grid.Row="3" Grid.Column="1" Margin="0,0,0,10">
+                    <TextBox x:Name="txtSearchHolder"
+             Margin="0,0,0,3"
+             TextChanged="txtSearchHolder_TextChanged"/>
+                    <ComboBox x:Name="cbHolder"
+              IsEditable="False"
+              DisplayMemberPath="FullName"
+              SelectedValuePath="EmployeeID"
+              MaxDropDownHeight="200"
+              SelectionChanged="cbHolder_SelectionChanged"/>
+                </StackPanel>
 
                 <!-- Передал -->
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="Передал:" Margin="0,0,5,10"/>
-                <ComboBox Grid.Row="4" Grid.Column="1"
-                          x:Name="cbTransferredBy"
-                          DisplayMemberPath="FullName"
-                          SelectedValuePath="EmployeeID"
-                          Margin="0,0,0,10"/>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Передал:" Margin="0,0,5,10" VerticalAlignment="Top"/>
+                <StackPanel Grid.Row="4" Grid.Column="1" Margin="0,0,0,10">
+                    <TextBox x:Name="txtSearchTransferred"
+             Margin="0,0,0,3"
+             TextChanged="txtSearchTransferred_TextChanged"/>
+                    <ComboBox x:Name="cbTransferredBy"
+              IsEditable="False"
+              DisplayMemberPath="FullName"
+              SelectedValuePath="EmployeeID"
+              MaxDropDownHeight="200"
+              SelectionChanged="cbTransferredBy_SelectionChanged"/>
+                </StackPanel>
 
                 <!-- Состояние -->
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="Состояние:" Margin="0,0,5,10"/>
