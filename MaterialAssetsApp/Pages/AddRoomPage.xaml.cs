@@ -6,7 +6,7 @@ namespace MaterialAssetsApp.Pages
 {
     public partial class AddRoomPage : Page
     {
-        private readonly MaterialAssetsEntities _context;
+        private MaterialAssetsEntities _context;
         private Room _selectedRoom;
 
         public AddRoomPage()
@@ -123,6 +123,12 @@ namespace MaterialAssetsApp.Pages
             _selectedRoom = null;
 
             MessageBox.Show("Кабинет удалён.");
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            _context = new MaterialAssetsEntities(); // свежий контекст
+            LoadRooms(); // или нужный метод загрузки
         }
     }
 }

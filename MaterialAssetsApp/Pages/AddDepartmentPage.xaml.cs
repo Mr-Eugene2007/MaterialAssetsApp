@@ -6,7 +6,7 @@ namespace MaterialAssetsApp.Pages
 {
     public partial class AddDepartmentPage : Page
     {
-        private readonly MaterialAssetsEntities _context;
+        private MaterialAssetsEntities _context;
         private Department _selectedDepartment;
 
         public AddDepartmentPage()
@@ -150,6 +150,13 @@ namespace MaterialAssetsApp.Pages
             _selectedDepartment = null;
 
             MessageBox.Show("Подразделение удалено.");
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            _context = new MaterialAssetsEntities(); // свежий контекст
+            LoadDepartments();
+            LoadParentDepartments(); // или нужный метод загрузки
         }
     }
 }

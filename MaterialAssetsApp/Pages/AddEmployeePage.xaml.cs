@@ -9,7 +9,7 @@ namespace MaterialAssetsApp.Pages
 {
     public partial class AddEmployeePage : Page
     {
-        private readonly MaterialAssetsEntities _context;
+        private MaterialAssetsEntities _context;
         private Employee _selectedEmployee;
 
         public AddEmployeePage()
@@ -220,6 +220,12 @@ namespace MaterialAssetsApp.Pages
             txtPhoneMobile.Text = formatted;
             txtPhoneMobile.CaretIndex = txtPhoneMobile.Text.Length;
             txtPhoneMobile.TextChanged += TxtPhoneMobile_TextChanged;
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            _context = new MaterialAssetsEntities(); // свежий контекст
+            LoadEmployees(); // или нужный метод загрузки
         }
 
     }

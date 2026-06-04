@@ -21,6 +21,11 @@
         <StackPanel Grid.Row="1"
                     Orientation="Horizontal"
                     Margin="0,0,0,10">
+            <Button Content="Экспорт в Excel"
+                    Width="140"
+                    Height="32"
+                    Margin="0,0,10,0"
+                    Click="BtnExport_Click"/>
             <Button Content="Переместить выбранные"
                     Width="180"
                     Height="32"
@@ -44,7 +49,7 @@
                 <DataGridTextColumn Header="Модель" Binding="{Binding ModelName}" Width="130"/>
                 <DataGridTextColumn Header="Подразделение" Binding="{Binding DepartmentName}" Width="160"/>
                 <DataGridTextColumn Header="Кабинет" Binding="{Binding RoomNumber}" Width="90"/>
-                <DataGridTextColumn Header="Держатель" Binding="{Binding HolderName}" Width="180"/>
+                <DataGridTextColumn Header="Ответственный" Binding="{Binding HolderName}" Width="180"/>
                 <DataGridTextColumn Header="Состояние" Binding="{Binding ConditionName}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>

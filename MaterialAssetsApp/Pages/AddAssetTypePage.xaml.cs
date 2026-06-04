@@ -6,7 +6,7 @@ namespace MaterialAssetsApp.Pages
 {
     public partial class AddAssetTypePage : Page
     {
-        private readonly MaterialAssetsEntities _context;
+        private MaterialAssetsEntities _context;
         private AssetType _selectedType;
 
         public AddAssetTypePage()
@@ -106,6 +106,12 @@ namespace MaterialAssetsApp.Pages
             _selectedType = null;
 
             MessageBox.Show("Тип удалён.");
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            _context = new MaterialAssetsEntities(); // свежий контекст
+            LoadTypes(); // или нужный метод загрузки
         }
     }
 }

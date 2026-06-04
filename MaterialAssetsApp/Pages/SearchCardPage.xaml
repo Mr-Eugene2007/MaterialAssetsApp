@@ -1,7 +1,8 @@
 ﻿<Page x:Class="MaterialAssetsApp.Pages.SearchCardPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      Title="Поиск учетной карточки">
+      Title="Поиск учетной карточки"
+      Loaded="Page_Loaded">
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -54,13 +55,20 @@
             </StackPanel>
 
             <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Margin="0,0,0,8">
+                <Button Content="Экспорт в Excel"
+                        Width="140" Height="32"
+                        Margin="0,0,10,0"
+                        Click="BtnExport_Click"/>
+                
                 <Button Content="Поиск"
                         Width="110" Height="32"
                         Margin="0,0,10,0"
                         Click="BtnSearch_Click"/>
+                
                 <Button Content="Сбросить"
                         Width="110" Height="32"
                         Click="BtnReset_Click"/>
+                
             </StackPanel>
         </WrapPanel>
 

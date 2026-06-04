@@ -6,7 +6,7 @@ namespace MaterialAssetsApp.Pages
 {
     public partial class AddModelPage : Page
     {
-        private readonly MaterialAssetsEntities _context;
+        private MaterialAssetsEntities _context;
         private AssetModel _selectedModel;
 
         public AddModelPage()
@@ -141,6 +141,12 @@ namespace MaterialAssetsApp.Pages
             _selectedModel = null;
 
             MessageBox.Show("Модель удалена.");
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            _context = new MaterialAssetsEntities(); // свежий контекст
+            LoadModels(); // или нужный метод загрузки
         }
     }
 }

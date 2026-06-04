@@ -85,5 +85,16 @@ namespace MaterialAssetsApp.Pages
             LoadAllRooms();
         }
 
+        private void BtnExport_Click(object sender, RoutedEventArgs e)
+        {
+            ExcelExporter.Export(dgRooms, "Кабинеты");
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            _context = new MaterialAssetsEntities(); // свежий контекст
+            LoadAllRooms(); // или нужный метод загрузки
+        }
+
     }
 }

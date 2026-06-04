@@ -159,5 +159,16 @@ namespace MaterialAssetsApp.Pages
             MessageBox.Show("Сотрудник удалён.");
         }
 
+        private void BtnExport_Click(object sender, RoutedEventArgs e)
+        {
+            ExcelExporter.Export(dgEmployees, "Сотрудники");
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            _context = new MaterialAssetsEntities(); // свежий контекст
+            LoadAllEmployees(); // или нужный метод загрузки
+        }
+
     }
 }

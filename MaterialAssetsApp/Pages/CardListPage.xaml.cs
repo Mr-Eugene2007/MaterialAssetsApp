@@ -10,6 +10,7 @@ namespace MaterialAssetsApp.Pages
         private readonly MaterialAssetsEntities _context;
         private readonly string _mode;
         private readonly int _id;
+        private string _contextName = "";
 
         public CardListPage(string mode, int id)
         {
@@ -29,14 +30,25 @@ namespace MaterialAssetsApp.Pages
                 case "employee":
                     txtTitle.Text = "Карточки сотрудника";
                     query = query.Where(c => c.CurrentHolderID == _id);
+                    var emp = _context.Employees.FirstOrDefault(e => e.EmployeeID == _id);
+                    if (emp != null)
+                        _contextName = $"{emp.LastName} {emp.FirstName} {emp.MiddleName}".Trim();
                     break;
+
                 case "department":
                     txtTitle.Text = "Карточки подразделения";
                     query = query.Where(c => c.DepartmentID == _id);
+                    var dep = _context.Departments.FirstOrDefault(d => d.DepartmentID == _id);
+                    if (dep != null)
+                        _contextName = dep.DepartmentName;
                     break;
+
                 case "room":
                     txtTitle.Text = "Карточки кабинета";
                     query = query.Where(c => c.RoomID == _id);
+                    var room = _context.Rooms.FirstOrDefault(r => r.RoomID == _id);
+                    if (room != null)
+                        _contextName = $"Кабинет {room.RoomNumber}";
                     break;
             }
             var data = query
@@ -105,6 +117,15 @@ namespace MaterialAssetsApp.Pages
 
             ((MainWindow)Application.Current.MainWindow)
                 .MainFrame.Navigate(new MassMoveSelectedPage(selected));
+        }
+
+        private void BtnExport_Click(object sender, RoutedEventArgs e)
+        {
+            string sheetName = string.IsNullOrWhiteSpace(_contextName)
+                ? txtTitle.Text
+                : $"{txtTitle.Text} — {_contextName}";
+
+            ExcelExporter.Export(dgCards, sheetName);
         }
 
     }
