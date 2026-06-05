@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,6 +11,7 @@ namespace MaterialAssetsApp.Pages
         private readonly MaterialAssetsEntities _context;
         private readonly List<AssetComponent> _tempComponents = new List<AssetComponent>();
         private List<dynamic> _allEmployees;
+
 
         public CreateAccountingCardPage()
         {
@@ -194,6 +196,22 @@ namespace MaterialAssetsApp.Pages
                 _context.AccountingCards.Add(card);
                 _context.SaveChanges();
 
+                // Первая запись в истории перемещений
+                var movement = new AssetMovement
+                {
+                    CardID = card.CardID,
+                    SequenceNumber = 1,
+                    MovementDate = card.CommissionDate ?? DateTime.Now,
+                    DepartmentID = card.DepartmentID,
+                    RoomID = card.RoomID,
+                    HolderEmployeeID = card.CurrentHolderID ?? CurrentSession.EmployeeID,
+                    TransferredByID = null,
+                    ConditionID = card.ConditionID,
+                    Notes = "Постановка на учёт"
+                };
+
+                _context.AssetMovements.Add(movement);
+
                 // Сохраняем комплектующие
                 foreach (var c in _tempComponents)
                 {
@@ -207,7 +225,6 @@ namespace MaterialAssetsApp.Pages
                                 "Успех",
                                 MessageBoxButton.OK,
                                 MessageBoxImage.Information);
-
             }
             catch (System.Exception ex)
             {
